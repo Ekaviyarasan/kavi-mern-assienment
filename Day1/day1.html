@@ -1,0 +1,230 @@
+1) What is JavaScript?
+
+JavaScript is a high-level, interpreted programming language mainly used to make web pages interactive.
+It runs in the browser (like Chrome) and on servers (via Node.js).
+
+Used for:
+
+Web development (frontend & backend)
+
+Mobile apps
+
+Games
+
+Server-side applications
+
+2) What are Variables?
+
+Variables are containers used to store data values.
+
+Example:
+
+let name = "John";
+
+
+Here, name stores the value "John".
+
+3) Difference between var, let, and const
+Feature	var	let	const
+Scope	Function-scoped	Block-scoped	Block-scoped
+Reassign	✅ Yes	✅ Yes	❌ No
+Redeclare	✅ Yes	❌ No	❌ No
+Hoisted	✅ Yes	✅ Yes (not initialized)	✅ Yes (not initialized)
+
+Example:
+
+var a = 10;
+let b = 20;
+const c = 30;
+
+
+👉 Modern JavaScript prefers let and const.
+
+4) What is Datatype?
+
+A datatype defines what kind of value a variable holds.
+
+Example:
+
+let age = 25; // number
+
+5) Types of Primitive Datatypes
+
+Primitive datatypes store single, simple values.
+
+There are 7 primitive types in JavaScript:
+
+string
+
+number
+
+boolean
+
+undefined
+
+null
+
+bigint
+
+symbol
+
+Example:
+
+let name = "John";  // string
+let age = 25;       // number
+let isActive = true; // boolean
+
+6) What are Non-Primitive Datatypes?
+
+Non-primitive types store collections of values or complex data.
+
+Main non-primitive type:
+
+Object
+
+Examples:
+
+Object
+
+Array
+
+Function
+
+let person = { name: "John", age: 25 }; // object
+let numbers = [1, 2, 3]; // array
+
+7) What are Operators?
+
+Operators are symbols used to perform operations on values.
+
+Example:
+
+let sum = 5 + 3;
+
+8) Types of Operators
+
+Arithmetic → + - * / %
+
+Assignment → = += -=
+
+Comparison → == === != > <
+
+Logical → && || !
+
+Unary → ++ --
+
+Ternary → condition ? true : false
+
+9) What is an Expression?
+
+An expression is a piece of code that produces a value.
+
+Example:
+
+5 + 3
+true && false
+
+10) What is a Statement?
+
+A statement is a complete instruction that performs an action.
+
+Example:
+
+let x = 10;  // statement
+
+
+👉 All expressions can be part of statements, but not all statements are expressions.
+
+11) What is Control Statement?
+
+Control statements control the flow of execution in a program.
+
+Examples:
+
+if
+
+for
+
+while
+
+switch
+
+12) What are Conditional Statements?
+
+Used to make decisions.
+
+if
+
+if...else
+
+else if
+
+switch
+
+Example:
+
+if (age >= 18) {
+  console.log("Adult");
+}
+
+13) What are Looping Statements?
+
+Used to repeat code.
+
+for
+
+while
+
+do...while
+
+for...of
+
+for...in
+
+Example:
+
+for (let i = 0; i < 5; i++) {
+  console.log(i);
+}
+
+14) What is Hoisting?
+
+Hoisting is JavaScript’s behavior of moving variable and function declarations to the top of their scope before execution.
+
+Example:
+
+console.log(a);
+var a = 5;
+
+
+This works because var is hoisted (but initialized as undefined).
+
+15) What is Scope?
+
+Scope determines where a variable can be accessed.
+
+Types:
+
+Global scope
+
+Function scope
+
+Block scope
+
+16) What is Closure?
+
+A closure is created when a function remembers variables from its outer scope even after the outer function has finished executing.
+
+Example:
+
+function outer() {
+  let count = 0;
+  return function inner() {
+    count++;
+    console.log(count);
+  };
+}
+
+let counter = outer();
+counter(); // 1
+counter(); // 2
