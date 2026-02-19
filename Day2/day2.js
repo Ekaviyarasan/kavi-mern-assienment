@@ -58,11 +58,11 @@ console.log(10 !== "10");  // true
 
 
 
-let age = 20;
-let hasID = true;
+// let age = 20;
+// let hasID = true;
 
-if (age > 18 && hasID) {
-  console.log("Eligible");
-} else if (age < 18 || !hasID) {
-  console.log("Not eligible");
-}
+// if (age > 18 && hasID) {
+//   console.log("Eligible");
+// } else if (age < 18 || !hasID) {
+//   console.log("Not eligible");
+// }
