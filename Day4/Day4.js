@@ -4,15 +4,15 @@
 //     console.log(false == "0");
     
 
- function calculateTotal(price, qty) {
-  const numericPrice = Number(price);
-  const numericQty = Number(qty);
+//  function calculateTotal(price, qty) {
+//   const numericPrice = Number(price);
+//   const numericQty = Number(qty);
 
-  return numericPrice * numericQty;
-}
+//   return numericPrice * numericQty;
+// }
 
 
-calculateTotal("19.99", "3"); 
+// calculateTotal("19.99", "3"); 
 
 
 // Expression	Result	Explanation
@@ -23,8 +23,8 @@ calculateTotal("19.99", "3");
 // null == undefined	true	Special rule in ==
 // null === undefined	false	Different types
 
-toBoolean(0);       
-toBoolean("hello"); 
-toBoolean("");       
-toBoolean([]);     
-toBoolean(null);    
+(toBoolean(0));       
+// toBoolean("hello"); 
+// toBoolean("");       
+// toBoolean([]);     
+// toBoolean(null);    
