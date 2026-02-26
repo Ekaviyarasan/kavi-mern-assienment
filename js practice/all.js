@@ -56,3 +56,52 @@
 // }
 
 // },2000)
+
+
+// for(let i=0, j=10; i<j; i++,j--){
+//     console.log(i,j)
+// }
+
+// for(;;){
+//     console.log("run")
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// for (let i = 0; i < 5; i++) {
+//   if (i === 2) continue;
+//   if (i === 4) break;
+//   console.log(i);
+// }
+
+
+
+
+
+
+
+// for(let i=0,j=20;i<j;i++,j--){
+//     console.log(i,j)
+// }
+
+for(;;){
+    console.log("surprise")
+}
