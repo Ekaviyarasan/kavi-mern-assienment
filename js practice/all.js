@@ -105,3 +105,31 @@
 for(;;){
     console.log("surprise")
 }
+
+
+
+ const add=[1,2,3,4,5]
+ const sum=[...add]
+// console.log(sum)
+ const add1=["a","b"]
+ const sum1=[...add1]
+// const numsum={...sum}
+// console.log(numsum)
+// console.log(sum1)
+
+ 
+     console.log(...sum,...sum1)
+ 
+
+// const adding=[...add1,245,300]
+// console.log(adding)
+
+const kavi={
+    name:"aji",
+    rool:"stu",
+    college:"MRK"
+}
+
+console.log(kavi)
+const data={...kavi,rool:"deve"}
+console.log(data)
