@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>DOM</title>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    button {
+      margin: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    .error {
+      color: red;
+    }
+
+    .success {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+
+  <section>
+    <h2 style="color: crimson; text-align: center;">Counter</h2>
+    <h3 id="count" style="color: crimson;">0</h3>
+    <button id="increase" style="color: fuchsia;">Increase</button>
+    <button id="decrease" style="color: chartreuse;">Decrease</button>
+    <button id="reset" style="color: darkmagenta;">Reset</button>
+  </section>
+
+  
+  <section>
+    <h2>Add Item</h2>
+    <input type="text" id="itemInput" placeholder="Enter item" />
+    <button id="addItem">Add</button>
+    <ul id="itemList"></ul>
+  </section>
+
+  
+  <section>
+    <h2 style="background-color: cadetblue;">Form Validation</h2>
+    <form id="myForm">
+      <input type="text" id="username" placeholder="Username" />
+      <button type="submit">Submit</button>
+      <p id="formMessage"></p>
+    </form>
+  </section>
+
+  
+  <section>
+    <h2>Background Toggle</h2>
+    <button id="toggleBg" style="background-color: chartreuse;">Toggle Background</button>
+  </section>
+
+  <script>
+    
+    let count = 0;
+    const countDisplay = document.getElementById("count");
+
+    document.getElementById("increase").addEventListener("click", () => {
+      count++;
+      countDisplay.textContent = count;
+    });
+
+    document.getElementById("decrease").addEventListener("click", () => {
+      count--;
+      countDisplay.textContent = count;
+    });
+
+    document.getElementById("reset").addEventListener("click", () => {
+      count = 0;
+      countDisplay.textContent = count;
+    });
+
+    
+    document.getElementById("addItem").addEventListener("click", () => {
+      const input = document.getElementById("itemInput");
+      const text = input.value.trim();
+
+      if (text === "") return;
+
+      const li = document.createElement("li");
+      li.textContent = text;
+
+      const deleteBtn = document.createElement("button");
+      deleteBtn.textContent = "Delete";
+
+      deleteBtn.addEventListener("click", () => {
+        li.remove();
+      });
+
+      li.appendChild(deleteBtn);
+      document.getElementById("itemList").appendChild(li);
+
+      input.value = "";
+    });
+
+    
+    document.getElementById("myForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const username = document.getElementById("username").value.trim();
+      const message = document.getElementById("formMessage");
+
+      if (username === "") {
+        message.textContent = "Username is required!";
+        message.className = "error";
+      } else {
+        message.textContent = "Form submitted successfully!";
+        message.className = "success";
+      }
+    });
+
+  
+    let isDefaultBg = true;
+
+    document.getElementById("toggleBg").addEventListener("click", () => {
+      document.body.style.backgroundColor = isDefaultBg ? "#f0f8ff" : "#ffffff";
+      isDefaultBg = !isDefaultBg;
+    });
+
+
+    var usre=document.getElementById("username")
+    usre.style.background="red"
+    var kl=document.getElementById("count")
+    kl.style.backgroundColor="pink"
+  </script>
+
+</body>
+</html>
