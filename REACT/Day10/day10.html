@@ -1,0 +1,175 @@
+
+<h1>
+<!-- What is React?
+
+React is a JavaScript library used to build user interfaces (UI), especially single-page applications.
+
+Key ideas:
+
+Component-based (UI is broken into reusable pieces)
+
+Fast (uses Virtual DOM)
+
+Declarative (you describe what the UI should look like, React handles how) -->
+
+<!-- 
+2. What is JS and what is JSX?
+JavaScript (JS)
+
+A programming language
+
+Used to add logic, events, calculations, API calls, etc.
+
+Example:
+
+let name = "Alex";
+console.log(name);
+JSX (JavaScript XML)
+
+A syntax extension of JavaScript
+
+Looks like HTML but works inside JavaScript
+
+Used by React to describe UI
+
+Example:
+
+const element = <h1>Hello World</h1>; -->
+
+
+
+
+<!-- 
+  3.)Connects React to the real browser DOM
+
+Renders the root component (App) into index.html
+
+Example:
+
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <App />
+);
+ Use ;
+
+To start the React app
+
+To tell React where to render the UI -->
+
+
+4. What is Babel compiler?
+
+Babel is a JavaScript compiler.
+
+What it does:
+
+Converts JSX → JavaScript
+
+Converts modern JS (ES6+) → older JS (browser-compatible)
+
+Example:
+
+<h1>Hello</h1>
+
+⬇ Babel converts it to:
+
+React.createElement("h1", null, "Hello");
+
+
+
+
+
+
+
+<!-- 5. What is Virtual DOM and Real DOM?
+Real DOM
+
+The actual DOM in the browser
+
+Slow when updated frequently
+
+Example:
+
+<div id="root">
+  <h1>Hello</h1>
+</div>
+Virtual DOM
+
+A lightweight copy of the real DOM
+
+Stored in memory
+
+Faster to update
+
+How React uses it:
+
+Change happens
+
+React updates Virtual DOM
+
+React compares old vs new (diffing)
+
+Only necessary changes go to Real DOM -->
+
+
+
+6. What is export default and named exports?
+Export Default
+
+Only one per file
+
+Can be imported with any name
+
+export default function App() {
+  return <h1>Hello</h1>;
+}
+Named Exports
+
+Can export multiple things
+
+Must use same name while importing
+
+export const name = "React";
+export const version = 18;
+
+
+
+
+
+
+
+
+
+
+
+7. How do you import export default?
+
+Example:
+
+Exporting
+
+export default App;
+
+Importing
+
+import App from "./App";
+
+👉 Name can be anything:
+
+import MyApp from "./App";
+
+
+
+
+
+
+
+</h1>
+
+
+
+
+
