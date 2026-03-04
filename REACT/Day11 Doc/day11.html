@@ -1,0 +1,30 @@
+1). A component is:
+
+A function or class
+
+That returns JSX (HTML-like code)
+
+Used to create part of the UI
+
+
+2).Types;
+ * Function componends
+ * Class componends
+
+3).What Are Fragment Tags in React Components?
+
+React components must return only one parent element.
+
+❌ Wrong (multiple elements)
+return (
+  <h1>Hello</h1>
+  <p>Welcome</p>
+);
+✅ Fragment Tag Solution
+return (
+  <>
+    <h1>Hello</h1>
+    <p>Welcome</p>
+  </>
+);
+Or using React.Fragment 
