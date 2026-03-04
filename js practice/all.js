@@ -1,145 +1,181 @@
-// // // for(let i=0; i>=10; i++){
+// // // // for(let i=0; i>=10; i++){
+// // // //     console.log(i)
+// // // // }
+// // // // for (let i = 10; i >= 0; i--) {
+// // // //   console.log(i);
+// // // // }
+
+// // // const obj = {
+// // //   name: "Alex",
+// // //   age: 25,
+// // //   city: "NY"
+// // // };
+
+// // // for (const key in obj) {
+// // //   console.log(key, obj[key]);
+// // // }
+
+
+// // // const users = [
+// // //   { name: "silam", age: 22 },
+// // //   { name: "aura", age: 30 },
+// // //   { name: "arasan", age: 27 }
+// // // ];
+
+// // // for (let i = 0; i < users.length; i++) {
+// // //   console.log(users[i].name, users[i].age);
+// // // }
+
+// // // const kavi=[1,2,3,4];
+// // // for( let i=0; i<kavi.length; i++){
+// // //     console.log(kavi[i/2])
+// // // }
+
+// // // for(let i=20; i>=0; i--){
 // // //     console.log(i)
 // // // }
-// // // for (let i = 10; i >= 0; i--) {
-// // //   console.log(i);
+
+// // // const add={
+// // //     name:"hr",
+// // //     age:10
 // // // }
+// // // for(const key in add){
+// // //     console.log(key,add[key])
+// // // }
+// // const fruits = ["🍎", "🍌", "🍊"];
 
-// // const obj = {
-// //   name: "Alex",
-// //   age: 25,
-// //   city: "NY"
-// // };
+// // for (const fruit of fruits) {
+// //   console.log(fruit);
+// // }
 
-// // for (const key in obj) {
-// //   console.log(key, obj[key]);
+// // for (let i=0; i<=10; i++)
+// // for (let j=0; j<=10; j++){
+// //     console.log(i,j)
 // // }
 
 
-// // const users = [
-// //   { name: "silam", age: 22 },
-// //   { name: "aura", age: 30 },
-// //   { name: "arasan", age: 27 }
-// // ];
 
-// // for (let i = 0; i < users.length; i++) {
-// //   console.log(users[i].name, users[i].age);
+
+// // setInterval(()=>{
+// //      const add={
+// //      name:"hr",
+// //      age:10
+// //  }
+// //  for(const key in add){
+// //      console.log(key,add[key])
 // // }
 
-// // const kavi=[1,2,3,4];
-// // for( let i=0; i<kavi.length; i++){
-// //     console.log(kavi[i/2])
+// // },2000)
+
+
+// // for(let i=0, j=10; i<j; i++,j--){
+// //     console.log(i,j)
 // // }
 
-// // for(let i=20; i>=0; i--){
-// //     console.log(i)
+// // for(;;){
+// //     console.log("run")
 // // }
 
-// // const add={
-// //     name:"hr",
-// //     age:10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // for (let i = 0; i < 5; i++) {
+// //   if (i === 2) continue;
+// //   if (i === 4) break;
+// //   console.log(i);
 // // }
-// // for(const key in add){
-// //     console.log(key,add[key])
+
+
+
+
+
+
+
+// // for(let i=0,j=20;i<j;i++,j--){
+// //     console.log(i,j)
 // // }
-// const fruits = ["🍎", "🍌", "🍊"];
-
-// for (const fruit of fruits) {
-//   console.log(fruit);
-// }
-
-// for (let i=0; i<=10; i++)
-// for (let j=0; j<=10; j++){
-//     console.log(i,j)
-// }
-
-
-
-
-// setInterval(()=>{
-//      const add={
-//      name:"hr",
-//      age:10
-//  }
-//  for(const key in add){
-//      console.log(key,add[key])
-// }
-
-// },2000)
-
-
-// for(let i=0, j=10; i<j; i++,j--){
-//     console.log(i,j)
-// }
 
 // for(;;){
-//     console.log("run")
+//     console.log("surprise")
 // }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// for (let i = 0; i < 5; i++) {
-//   if (i === 2) continue;
-//   if (i === 4) break;
-//   console.log(i);
-// }
-
-
-
-
-
-
-
-// for(let i=0,j=20;i<j;i++,j--){
-//     console.log(i,j)
-// }
-
-for(;;){
-    console.log("surprise")
-}
-
-
-
- const add=[1,2,3,4,5]
- const sum=[...add]
-// console.log(sum)
- const add1=["a","b"]
- const sum1=[...add1]
-// const numsum={...sum}
-// console.log(numsum)
-// console.log(sum1)
+//  const add=[1,2,3,4,5]
+//  const sum=[...add]
+// // console.log(sum)
+//  const add1=["a","b"]
+//  const sum1=[...add1]
+// // const numsum={...sum}
+// // console.log(numsum)
+// // console.log(sum1)
 
  
-     console.log(...sum,...sum1)
+//      console.log(...sum,...sum1)
  
 
-// const adding=[...add1,245,300]
-// console.log(adding)
+// // const adding=[...add1,245,300]
+// // console.log(adding)
 
-const kavi={
-    name:"aji",
-    rool:"stu",
-    college:"MRK"
+// const kavi={
+//     name:"aji",
+//     rool:"stu",
+//     college:"MRK"
+// }
+
+// console.log(kavi)
+// const data={...kavi,rool:"deve"}
+// console.log(data)
+
+
+
+
+
+
+// let n = parseInt(prompt("Enter n:"));
+
+// for (let num = 2; num <= n; num++) {
+//     let isPrime = true;
+
+//     for (let i = 2; i < num; i++) {
+//         if (num % i === 0) {
+//             isPrime = false;
+//             break;
+//         }
+//     }
+
+//     if (isPrime) {
+//         console.log(num);
+//     }
+// }
+
+
+let n = parseInt(prompt("Enter number of terms:"));
+
+let a = 0, b = 1;
+
+console.log("Fibonacci Series:");
+
+for (let i = 0; i < n; i++) {
+    console.log(a);
+    let next = a + b;
+    a = b;
+    b = next;
 }
-
-console.log(kavi)
-const data={...kavi,rool:"deve"}
-console.log(data)
