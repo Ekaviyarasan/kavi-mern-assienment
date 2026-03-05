@@ -7,7 +7,7 @@ class Hello extends Component{
         return(<>
         <button>click</button>
 
-        </>)
+        </>)``
     }
 }
 export default Hello
