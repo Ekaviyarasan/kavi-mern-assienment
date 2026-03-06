@@ -8,10 +8,12 @@ function App() {
 
   return (
     <>
-    <Welcome/>
-    <Navber />
+   
 
-<h1 className="text-4xl font-bold text-green-500 bg-pink-500 text-center">Web</h1>      
+<h1 className="text-4xl font-bold text-green-500 bg-pink-500 text-center">THE FIGHTERS</h1>  
+ 
+    <Navber />    
+     <Welcome/> 
     </>
   )
 }
