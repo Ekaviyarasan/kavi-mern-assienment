@@ -179,3 +179,35 @@ for (let i = 0; i < n; i++) {
     a = b;
     b = next;
 }
+
+
+let arr = [10, 25, 7, 89, 45];
+
+let largest = -Infinity;
+let secondLargest = -Infinity;
+
+for (let i = 0; i < arr.length; i++) {
+  if (arr[i] > largest) {
+    secondLargest = largest;
+    largest = arr[i];
+  } else if (arr[i] > secondLargest && arr[i] !== largest) {
+    secondLargest = arr[i];
+  }
+}
+
+console.log("Second largest number:", secondLargest);
+
+
+
+
+let arr = [10, 25, 7, 89, 45];
+
+let largest = arr[0];
+
+for (let i = 1; i < arr.length; i++) {
+  if (arr[i] > largest) {
+    largest = arr[i];
+  }
+}
+
+console.log("Largest number:", largest);
