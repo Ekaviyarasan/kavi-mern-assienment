@@ -15,7 +15,7 @@ const kavi = async () => {
 };
 
 kavi();
-</script>  -->
+</script> 
 
 
 
@@ -52,4 +52,100 @@ const kavi = async()=>{
     
 }
 kavi()
+</script> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+<!-- <script>
+const kavi =  async() =>{
+try{
+  const res=await fetch("https://dummyjson.com/products");
+  const data=await res.json()
+  console.log(data.products);
+  const datas=data.products
+  console.log(datas)
+  
+}
+catch(error){
+           console.log("Error:",error);
+           
+}
+}
+kavi()
+
+
+</script>  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+const kavi =async()=>{
+  try{
+    const res=await fetch("https://dummyjson.com/products")
+    const kl= await res.json()
+    console.log(kl.products);
+    const lk=kl.products
+console.log(lk);
+    
+    
+  }
+  catch(error){
+console.log("Error",error);
+
+  }
+
+}
+kavi()
+
 </script>
