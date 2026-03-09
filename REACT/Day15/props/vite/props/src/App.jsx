@@ -4,6 +4,8 @@ import ProductContainer from './components/ProductContainer'
 import StudentContainer from './components/StudentContainer'
 import DeveloperContainer from './components/DeveloperContainer'
 import EmployeeContainer from './components/EmployeeContainer'
+import Service from './components/Service'
+import Ipl from './components/Ipl'
 
 const App = () => {
   return (
@@ -13,6 +15,8 @@ const App = () => {
     <StudentContainer/>
     <DeveloperContainer/>
   <EmployeeContainer/>
+  <Service/>
+  <Ipl/>
     </>
   )
 }
