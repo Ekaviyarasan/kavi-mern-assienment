@@ -1,2 +1,0 @@
-# kavi-mern assienment
-
