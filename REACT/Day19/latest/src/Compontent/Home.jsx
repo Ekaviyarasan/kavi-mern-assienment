@@ -23,8 +23,8 @@ function Home() {
 
     
 
-    <h1  className='bg-blue-300  w-400 h-300 '>{value}</h1>
-    <h1 className='bg-blue-300  w-400 h-300 '>{name}</h1>
+    <h1  className='bg-pink-300  w-400 h-300  flex'>{value}</h1>
+    <h1 className='bg-red-300  w-400 h-300  flex'>{name}</h1>
     
     
     </>
