@@ -10,6 +10,8 @@ function App() {
 
       <Route path='/' element={<Home/>}/>
       <Route path='/assinment25' element={<Feacth/>}/>
+      
+      
 
     </Routes>
     
