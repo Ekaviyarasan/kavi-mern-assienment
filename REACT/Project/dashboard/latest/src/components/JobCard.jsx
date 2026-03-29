@@ -11,11 +11,14 @@ const iconsMap = {
   PawPrint: PawPrint
 };
 
-const JobCard = ({ job }) => {
+const JobCard = ({ job, setCurrentView }) => {
   const IconComponent = iconsMap[job.icon] || Package;
 
   return (
-    <div className="bg-[#151923] border border-[#2A3143] rounded-2xl p-6 flex flex-col justify-between hover:border-[#3B4255] transition-colors relative overflow-hidden group">
+    <div 
+      onClick={() => setCurrentView && setCurrentView('jobDetails')}
+      className="bg-[#151923] border border-[#2A3143] rounded-2xl p-6 flex flex-col justify-between hover:border-[#3B4255] cursor-pointer transition-colors relative overflow-hidden group"
+    >
       
       {/* Top Header Row */}
       <div className="flex justify-between items-start mb-4">

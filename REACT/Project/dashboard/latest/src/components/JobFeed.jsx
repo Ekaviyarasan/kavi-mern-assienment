@@ -1,7 +1,7 @@
 import { jobsData } from '../data/jobsData';
 import JobCard from './JobCard';
 
-const JobFeed = () => {
+const JobFeed = ({ setCurrentView }) => {
   return (
     <div className="flex-1 overflow-y-auto bg-[#0B0F19] text-white p-8">
       
@@ -41,7 +41,7 @@ const JobFeed = () => {
         {/* Masonry / Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           {jobsData.map(job => (
-            <JobCard key={job.id} job={job} />
+            <JobCard key={job.id} job={job} setCurrentView={setCurrentView} />
           ))}
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { LayoutDashboard, Compass, Briefcase, MessageSquare, BarChart2, Plus, Settings, HelpCircle } from 'lucide-react';
+import { LayoutDashboard, Compass, Briefcase, MessageSquare, BarChart2, Plus, Settings, HelpCircle, User } from 'lucide-react';
 
 const Sidebar = ({ currentView, setCurrentView }) => {
   return (

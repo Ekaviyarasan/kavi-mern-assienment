@@ -32,8 +32,8 @@ function App() {
       <div className="flex-1 flex flex-col relative h-screen overflow-hidden">
         {currentView !== 'messages' && currentView !== 'profile' && <Header />}
         
-        {currentView === 'dashboard' && <Dashboard />}
-        {currentView === 'marketplace' && <JobFeed />}
+        {currentView === 'dashboard' && <Dashboard setCurrentView={setCurrentView} />}
+        {currentView === 'marketplace' && <JobFeed setCurrentView={setCurrentView} />}
         {currentView === 'jobDetails' && <JobDetails />}
         {currentView === 'postJob' && <PostJob />}
         {currentView === 'messages' && <Messages />}
