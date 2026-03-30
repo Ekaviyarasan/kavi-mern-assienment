@@ -130,12 +130,12 @@ const Messages = () => {
               <div className="flex items-center gap-4">
                  <div className="relative">
                     <div className="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 p-0.5">
-                       <div className="w-full h-full bg-[#0B0F19] rounded-full flex items-center justify-center text-xs font-bold overflow-hidden border-2 border-[#151923]">S</div>
+                       <div className="w-full h-full bg-[#0B0F19] rounded-full flex items-center justify-center text-xs font-bold overflow-hidden border-2 border-[#151923]">A</div>
                     </div>
                     <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-[#11131A] rounded-full"></div>
                  </div>
                  <div>
-                    <h2 className="text-lg font-bold">Sarah Jenkins</h2>
+                    <h2 className="text-lg font-bold">Ajith</h2>
                     <p className="text-[10px] font-bold tracking-widest text-green-500 uppercase">Online Now</p>
                  </div>
               </div>
@@ -170,7 +170,7 @@ const Messages = () => {
               <div className="flex gap-4 items-start max-w-2xl ml-auto justify-end">
                  <div className="flex flex-col gap-1 items-end">
                     <div className="bg-[#818CF8] bg-gradient-to-br from-[#818CF8] to-[#6366F1] text-white p-4 rounded-2xl rounded-tr-sm text-sm font-medium leading-relaxed shadow-[0_4px_15px_rgba(129,140,248,0.2)]">
-                       Hi Sarah! I'd love to help with that. Coffee shops are one of my favorite niches to work in. What kind of vibe are you going for?
+                       Hi Ajith! I'd love to help with that. Coffee shops are one of my favorite niches to work in. What kind of vibe are you going for?
                     </div>
                     <span className="text-[10px] text-slate-500 font-bold px-1 flex items-center gap-1">10:45 AM <span className="text-[#818CF8]">✓✓</span></span>
                  </div>

@@ -8,7 +8,7 @@ const Dashboard = ({ setCurrentView }) => {
       
       {/* Welcome Header */}
       <div className="mb-8">
-        <h1 className="text-3xl font-extrabold mb-2 tracking-tight">Welcome back, Alex</h1>
+        <h1 className="text-3xl font-extrabold mb-2 tracking-tight">Welcome back, Kavi</h1>
         <p className="text-slate-400">
           You have <span className="text-green-400 font-bold">3 active jobs</span> and 12 new marketplace opportunities.
         </p>

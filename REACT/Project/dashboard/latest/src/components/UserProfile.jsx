@@ -43,7 +43,7 @@ const UserProfile = () => {
                  </div>
               </div>
 
-              <h2 className="text-4xl font-black mb-2 tracking-tight text-white">Julian Vance</h2>
+              <h2 className="text-4xl font-black mb-2 tracking-tight text-white">Kaviarasan</h2>
               <p className="text-[#818CF8] font-semibold text-sm mb-4 leading-relaxed max-w-[250px]">
                  Master Carpenter & Furniture Designer
               </p>
@@ -53,13 +53,13 @@ const UserProfile = () => {
                    <CheckCircle2 size={10} fill="currentColor" className="text-green-200" /> VERIFIED PRO
                  </span>
                  <span className="bg-[#1C212E] border border-[#2A3143] font-mono tracking-tight text-[10px] px-3 py-1 rounded-sm text-slate-300">
-                   @julianvance
+                   @kaviarasan7778@gmail.com
                  </span>
               </div>
 
               <div className="flex w-full gap-3">
                  <button className="flex-1 px-4 py-3 bg-[#818CF8] hover:bg-[#6366F1] font-bold text-white rounded-xl transition shadow-[0_0_15px_rgba(129,140,248,0.2)]">
-                   Hire Julian
+                   Hire Kavi
                  </button>
                  <button className="flex-1 px-4 py-3 bg-[#1C212E] hover:bg-[#2A3143] border border-[#2A3143] font-bold text-slate-300 rounded-xl transition">
                    Message
@@ -156,7 +156,7 @@ const UserProfile = () => {
                     </div>
                  </div>
                  <p className="text-sm text-slate-400 font-medium italic leading-relaxed mt-6">
-                    "Julian built a custom dining table for our home and the craftsmanship is simply unmatched. He kept me updated throughout the process. Highly recommended!"
+                    "Kaviarasan built a custom dining table for our home and the craftsmanship is simply unmatched. He kept me updated throughout the process. Highly recommended!"
                  </p>
               </div>
 

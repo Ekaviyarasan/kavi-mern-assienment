@@ -9,7 +9,7 @@ const LandingPage = ({ setCurrentView }) => {
          {/* Logo */}
          <div className="flex items-center gap-2">
             <h1 className="text-xl font-bold tracking-tight cursor-pointer hover:text-slate-200 transition">
-              Local Hustle
+              TechChennaiHub
             </h1>
          </div>
 
@@ -37,11 +37,11 @@ const LandingPage = ({ setCurrentView }) => {
          <section className="max-w-7xl mx-auto px-6 flex flex-col items-center text-center mt-12 mb-32">
             
             <div className="inline-flex items-center justify-center px-4 py-1.5 rounded-full border border-[#2A3143] bg-[#151923] text-xs font-bold tracking-[0.2em] uppercase text-slate-400 mb-8">
-               NEW ENTERPRISE HUSTLE IS HERE
+               NEW ENTERPRISE Tech IS HERE
             </div>
             
             <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-6 leading-tight">
-               Find Local Help <br/>
+               Find Tech Help <br/>
                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#818CF8] to-[#C084FC] italic pe-2">Instantly.</span>
             </h1>
 
@@ -204,7 +204,7 @@ const LandingPage = ({ setCurrentView }) => {
          {/* 5. CTA Area */}
          <section className="max-w-4xl mx-auto px-6 text-center mb-32">
             <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-10">
-               Ready to start your hustle?
+               Ready to start your Tech Journy?
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
                <button onClick={() => setCurrentView('auth')} className="px-8 py-4 w-full sm:w-auto rounded-full bg-white hover:bg-slate-200 text-[#0B0F19] font-bold transition">
@@ -222,9 +222,9 @@ const LandingPage = ({ setCurrentView }) => {
       <footer className="border-t border-[#1F2937]/50 pt-20 pb-10 px-8 bg-[#0B0F19]">
          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
             <div className="md:col-span-1">
-               <h2 className="text-white text-lg font-bold tracking-tight mb-4">Local Hustle</h2>
+               <h2 className="text-white text-lg font-bold tracking-tight mb-4">TechChennaiHub</h2>
                <p className="text-slate-500 text-sm font-medium leading-relaxed max-w-xs">
-                  Connecting human potential to hyper-local needs since 2024.
+                  Connecting human potential to hyper-local needs since 2018.
                </p>
             </div>
             
@@ -257,7 +257,7 @@ const LandingPage = ({ setCurrentView }) => {
          </div>
 
          <div className="max-w-7xl mx-auto border-t border-[#1F2937]/50 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-mono font-bold tracking-widest text-slate-500 uppercase">
-            <p>© 2024 LOCAL HUSTLE INC.</p>
+            <p>© 2018  TechChennaiHub.</p>
             <p>BUILT WITH PRECISION AT 40.7128° N, 74.0060° W</p>
          </div>
       </footer>
