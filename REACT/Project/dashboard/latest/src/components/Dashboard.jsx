@@ -2,7 +2,10 @@ import {
   Zap, Banknote, Star, MoreVertical, FileText, 
   MapPin, CheckCircle2, MessageSquare, Plus
 } from 'lucide-react';
-const Dashboard = ({ setCurrentView }) => {
+import { useNavigate } from 'react-router-dom';
+
+const Dashboard = () => {
+  const navigate = useNavigate();
   return (
     <div className="flex-1 overflow-y-auto px-10 py-8 text-white relative">
       
@@ -57,12 +60,12 @@ const Dashboard = ({ setCurrentView }) => {
            <div>
               <div className="flex justify-between items-end mb-4">
                 <h2 className="text-xl font-bold">Active Jobs</h2>
-                <button onClick={() => setCurrentView && setCurrentView('marketplace')} className="text-sm text-[#818CF8] font-semibold hover:text-[#6366F1]">View All</button>
+                <button onClick={() => navigate('/marketplace')} className="text-sm text-[#818CF8] font-semibold hover:text-[#6366F1]">View All</button>
               </div>
 
               <div className="space-y-4">
                 {/* Active Job 1 */}
-                <div onClick={() => setCurrentView && setCurrentView('jobDetails')} className="bg-[#151923] border border-[#2A3143] rounded-2xl p-4 flex gap-6 hover:border-[#3B4255] cursor-pointer transition">
+                <div onClick={() => navigate('/job-details')} className="bg-[#151923] border border-[#2A3143] rounded-2xl p-4 flex gap-6 hover:border-[#3B4255] cursor-pointer transition">
                   {/* Image Placeholder */}
                   <div className="w-40 h-28 bg-gradient-to-br from-slate-700 to-slate-800 rounded-xl flex-shrink-0 relative overflow-hidden flex items-center justify-center">
                      <FileText size={40} className="text-slate-600" />
@@ -95,7 +98,7 @@ const Dashboard = ({ setCurrentView }) => {
                 </div>
 
                 {/* Active Job 2 */}
-                <div onClick={() => setCurrentView && setCurrentView('jobDetails')} className="bg-[#151923] border border-[#2A3143] rounded-2xl p-4 flex gap-6 hover:border-[#3B4255] cursor-pointer transition">
+                <div onClick={() => navigate('/job-details')} className="bg-[#151923] border border-[#2A3143] rounded-2xl p-4 flex gap-6 hover:border-[#3B4255] cursor-pointer transition">
                   {/* Image Placeholder */}
                   <div className="w-40 h-28 bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl flex-shrink-0 relative overflow-hidden flex items-center justify-center">
                      <FileText size={40} className="text-slate-700" />
@@ -129,7 +132,7 @@ const Dashboard = ({ setCurrentView }) => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                  
                  {/* Nearby Card 1 */}
-                 <div onClick={() => setCurrentView && setCurrentView('jobDetails')} className="bg-[#1C212E] border border-[#2A3143] p-5 rounded-2xl flex flex-col justify-between h-[140px] cursor-pointer hover:border-[#3B4255] transition">
+                 <div onClick={() => navigate('/job-details')} className="bg-[#1C212E] border border-[#2A3143] p-5 rounded-2xl flex flex-col justify-between h-[140px] cursor-pointer hover:border-[#3B4255] transition">
                     <div className="flex justify-between items-center mb-2">
                        <span className="text-[10px] bg-green-500/20 text-green-400 px-3 py-1 rounded-full font-bold uppercase tracking-widest">Delivery</span>
                        <span className="font-bold font-mono">$45</span>
@@ -141,7 +144,7 @@ const Dashboard = ({ setCurrentView }) => {
                  </div>
 
                  {/* Nearby Card 2 */}
-                 <div onClick={() => setCurrentView && setCurrentView('jobDetails')} className="bg-[#1C212E] border border-[#2A3143] p-5 rounded-2xl flex flex-col justify-between h-[140px] cursor-pointer hover:border-[#3B4255] transition">
+                 <div onClick={() => navigate('/job-details')} className="bg-[#1C212E] border border-[#2A3143] p-5 rounded-2xl flex flex-col justify-between h-[140px] cursor-pointer hover:border-[#3B4255] transition">
                     <div className="flex justify-between items-center mb-2">
                        <span className="text-[10px] bg-amber-500/20 text-amber-500 px-3 py-1 rounded-full font-bold uppercase tracking-widest">Manual</span>
                        <span className="font-bold font-mono">$20/hr</span>

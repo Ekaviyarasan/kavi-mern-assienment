@@ -1,6 +1,9 @@
 import { Bell, MessageSquare, User, ArrowRight, Zap, Shield, Wallet, MapPin, Search } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
-const LandingPage = ({ setCurrentView }) => {
+const LandingPage = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-[#0B0F19] text-white font-sans overflow-y-auto overflow-x-hidden selection:bg-[#818CF8] selection:text-white">
       
@@ -15,8 +18,8 @@ const LandingPage = ({ setCurrentView }) => {
 
          {/* Center Links */}
          <div className="hidden md:flex gap-8 items-center text-sm font-semibold">
-            <button onClick={() => setCurrentView('dashboard')} className="text-white hover:text-[#818CF8] transition">Dashboard</button>
-            <button onClick={() => setCurrentView('marketplace')} className="text-slate-400 hover:text-white transition">Marketplace</button>
+            <button onClick={() => navigate('/dashboard')} className="text-white hover:text-[#818CF8] transition">Dashboard</button>
+            <button onClick={() => navigate('/marketplace')} className="text-slate-400 hover:text-white transition">Marketplace</button>
             <button className="text-slate-400 hover:text-white transition">My Gigs</button>
          </div>
 
@@ -50,10 +53,10 @@ const LandingPage = ({ setCurrentView }) => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-24">
-               <button onClick={() => setCurrentView('marketplace')} className="px-8 py-4 rounded-xl bg-[#818CF8] hover:bg-[#6366F1] text-white font-bold transition flex items-center justify-center gap-2 group shadow-[0_0_20px_rgba(129,140,248,0.2)]">
+               <button onClick={() => navigate('/marketplace')} className="px-8 py-4 rounded-xl bg-[#818CF8] hover:bg-[#6366F1] text-white font-bold transition flex items-center justify-center gap-2 group shadow-[0_0_20px_rgba(129,140,248,0.2)]">
                   Post a Job <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                </button>
-               <button onClick={() => setCurrentView('marketplace')} className="px-8 py-4 rounded-xl bg-[#1C212E] hover:bg-[#2A3143] border border-[#2A3143] text-white font-bold transition">
+               <button onClick={() => navigate('/marketplace')} className="px-8 py-4 rounded-xl bg-[#1C212E] hover:bg-[#2A3143] border border-[#2A3143] text-white font-bold transition">
                   Find Work
                </button>
             </div>
@@ -207,10 +210,10 @@ const LandingPage = ({ setCurrentView }) => {
                Ready to start your Tech Journy?
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
-               <button onClick={() => setCurrentView('auth')} className="px-8 py-4 w-full sm:w-auto rounded-full bg-white hover:bg-slate-200 text-[#0B0F19] font-bold transition">
+               <button onClick={() => navigate('/auth')} className="px-8 py-4 w-full sm:w-auto rounded-full bg-white hover:bg-slate-200 text-[#0B0F19] font-bold transition">
                   Get Started Now
                </button>
-               <button onClick={() => setCurrentView('marketplace')} className="px-8 py-4 w-full sm:w-auto rounded-full bg-[#151923] hover:bg-[#1C212E] border border-[#2A3143] text-white font-bold transition">
+               <button onClick={() => navigate('/marketplace')} className="px-8 py-4 w-full sm:w-auto rounded-full bg-[#151923] hover:bg-[#1C212E] border border-[#2A3143] text-white font-bold transition">
                   View All Gigs
                </button>
             </div>

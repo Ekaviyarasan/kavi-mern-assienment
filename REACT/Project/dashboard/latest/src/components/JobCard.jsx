@@ -2,6 +2,7 @@ import {
   Package, MapPin, ChevronRight, PenTool, 
   Map, Clock, Truck, Monitor, PawPrint, Star, Bookmark
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const iconsMap = {
   Package: Package,
@@ -11,12 +12,13 @@ const iconsMap = {
   PawPrint: PawPrint
 };
 
-const JobCard = ({ job, setCurrentView }) => {
+const JobCard = ({ job }) => {
+  const navigate = useNavigate();
   const IconComponent = iconsMap[job.icon] || Package;
 
   return (
     <div 
-      onClick={() => setCurrentView && setCurrentView('jobDetails')}
+      onClick={() => navigate('/job-details')}
       className="bg-[#151923] border border-[#2A3143] rounded-2xl p-6 flex flex-col justify-between hover:border-[#3B4255] cursor-pointer transition-colors relative overflow-hidden group"
     >
       

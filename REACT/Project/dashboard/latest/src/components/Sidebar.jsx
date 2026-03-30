@@ -1,6 +1,14 @@
 import { LayoutDashboard, Compass, Briefcase, MessageSquare, BarChart2, Plus, Settings, HelpCircle, User } from 'lucide-react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
-const Sidebar = ({ currentView, setCurrentView }) => {
+const Sidebar = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  
+  // Parse route to determine active icon
+  let currentView = location.pathname.replace('/', '') || 'dashboard';
+  if (currentView === 'job-details') currentView = 'marketplace';
+
   return (
     <div className="w-64 flex-shrink-0 bg-[#11131A] h-screen flex flex-col justify-between border-r border-[#1F2937] px-4 py-6 text-slate-400">
       
@@ -13,7 +21,7 @@ const Sidebar = ({ currentView, setCurrentView }) => {
 
         <nav className="space-y-1">
           <button 
-            onClick={() => setCurrentView('dashboard')}
+            onClick={() => navigate('/dashboard')}
             className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors font-medium ${currentView === 'dashboard' ? 'bg-[#1E1B4B]/50 text-[#818CF8] relative' : 'hover:bg-white/5'}`}
           >
             {currentView === 'dashboard' && <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-[#818CF8] rounded-r-md"></div>}
@@ -22,7 +30,7 @@ const Sidebar = ({ currentView, setCurrentView }) => {
           </button>
           
           <button 
-            onClick={() => setCurrentView('marketplace')}
+            onClick={() => navigate('/marketplace')}
             className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors font-medium ${currentView === 'marketplace' ? 'bg-[#1E1B4B]/50 text-[#818CF8] relative' : 'hover:bg-white/5'}`}
           >
             {currentView === 'marketplace' && <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-[#818CF8] rounded-r-md"></div>}
@@ -36,7 +44,7 @@ const Sidebar = ({ currentView, setCurrentView }) => {
           </button>
           
           <button 
-            onClick={() => setCurrentView('messages')}
+            onClick={() => navigate('/messages')}
             className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors font-medium text-left ${currentView === 'messages' ? 'bg-[#1E1B4B]/50 text-[#818CF8] relative' : 'hover:bg-white/5'}`}
           >
             {currentView === 'messages' && <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-[#818CF8] rounded-r-md"></div>}
@@ -45,7 +53,7 @@ const Sidebar = ({ currentView, setCurrentView }) => {
           </button>
           
           <button 
-            onClick={() => setCurrentView('profile')}
+            onClick={() => navigate('/profile')}
             className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors font-medium text-left ${currentView === 'profile' ? 'bg-[#1E1B4B]/50 text-[#818CF8] relative' : 'hover:bg-white/5'}`}
           >
             {currentView === 'profile' && <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-[#818CF8] rounded-r-md"></div>}
@@ -62,7 +70,7 @@ const Sidebar = ({ currentView, setCurrentView }) => {
 
       {/* Bottom Section */}
       <div className="space-y-6">
-        <button onClick={() => setCurrentView('postJob')} className="w-full bg-[#818CF8] hover:bg-[#6366F1] text-white py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-colors shadow-[0_0_15px_rgba(129,140,248,0.2)]">
+        <button onClick={() => navigate('/post-job')} className="w-full bg-[#818CF8] hover:bg-[#6366F1] text-white py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-colors shadow-[0_0_15px_rgba(129,140,248,0.2)]">
           <Plus size={18} strokeWidth={3} />
           Post a Hustle
         </button>

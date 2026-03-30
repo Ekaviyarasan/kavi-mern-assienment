@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
 import JobFeed from './components/JobFeed';
@@ -11,35 +11,37 @@ import UserProfile from './components/UserProfile';
 import Auth from './components/Auth';
 import './App.css';
 
-function App() {
-  const [currentView, setCurrentView] = useState('landing'); // 'landing', 'dashboard', 'marketplace'
+function ApplicationLayout({ children }) {
+  const location = useLocation();
+  const currentView = location.pathname.replace('/', '') || 'landing';
+  const showHeader = currentView !== 'messages' && currentView !== 'profile';
 
-  // If we are on the landing page, render only the landing page
-  if (currentView === 'landing') {
-    return <LandingPage setCurrentView={setCurrentView} />;
-  }
-
-  // If we are on the auth page, render only auth page
-  if (currentView === 'auth') {
-    return <Auth setCurrentView={setCurrentView} />;
-  }
-
-  // Otherwise, render the internal application layout
   return (
     <div className="flex h-screen overflow-hidden bg-[#0B0F19] font-sans antialiased text-white">
-      <Sidebar currentView={currentView} setCurrentView={setCurrentView} />
-      
+      <Sidebar />
       <div className="flex-1 flex flex-col relative h-screen overflow-hidden">
-        {currentView !== 'messages' && currentView !== 'profile' && <Header />}
-        
-        {currentView === 'dashboard' && <Dashboard setCurrentView={setCurrentView} />}
-        {currentView === 'marketplace' && <JobFeed setCurrentView={setCurrentView} />}
-        {currentView === 'jobDetails' && <JobDetails />}
-        {currentView === 'postJob' && <PostJob />}
-        {currentView === 'messages' && <Messages />}
-        {currentView === 'profile' && <UserProfile />}
+        {showHeader && <Header />}
+        {children}
       </div>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+      {/* Public Routes */}
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/auth" element={<Auth />} />
+
+      {/* Internal App Routes wrapped in Layout */}
+      <Route path="/dashboard" element={<ApplicationLayout><Dashboard /></ApplicationLayout>} />
+      <Route path="/marketplace" element={<ApplicationLayout><JobFeed /></ApplicationLayout>} />
+      <Route path="/job-details" element={<ApplicationLayout><JobDetails /></ApplicationLayout>} />
+      <Route path="/post-job" element={<ApplicationLayout><PostJob /></ApplicationLayout>} />
+      <Route path="/messages" element={<ApplicationLayout><Messages /></ApplicationLayout>} />
+      <Route path="/profile" element={<ApplicationLayout><UserProfile /></ApplicationLayout>} />
+    </Routes>
   );
 }
 
