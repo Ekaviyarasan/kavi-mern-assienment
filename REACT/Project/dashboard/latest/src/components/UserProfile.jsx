@@ -8,7 +8,7 @@ const UserProfile = () => {
       <nav className="h-20 border-b border-[#1F2937]/60 px-8 flex items-center justify-between sticky top-0 z-50 bg-[#0B0F19]/90 backdrop-blur-md">
         
         <div className="flex items-center gap-10">
-           <h1 className="text-xl font-bold tracking-tight">Local Hustle</h1>
+           <h1 className="text-xl font-bold tracking-tight">Jobzenix</h1>
            <div className="hidden md:flex gap-6 items-center text-sm font-semibold text-slate-400">
               <span className="hover:text-white transition cursor-pointer">Marketplace</span>
               <span className="hover:text-white transition cursor-pointer">Find Gigs</span>
@@ -23,7 +23,7 @@ const UserProfile = () => {
           <div className="w-px h-6 bg-[#1F2937]/80"></div>
           
           <button className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center ring-2 hover:ring-[#818CF8] ring-[#151923] p-0.5 transition">
-             <div className="w-full h-full bg-[#0B0F19] rounded-full border-2 border-[#151923] flex items-center justify-center text-xs font-bold">S</div>
+             <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=32&h=32&fit=crop&crop=face" alt="User Avatar" className="w-full h-full rounded-full" />
           </button>
         </div>
       </nav>
@@ -39,13 +39,13 @@ const UserProfile = () => {
               {/* Glowing Avatar */}
               <div className="relative w-40 h-40 rounded-full bg-gradient-to-r from-[#6366F1] to-cyan-400 p-1 mb-6 shadow-[0_0_40px_rgba(99,102,241,0.3)]">
                  <div className="w-full h-full bg-[#11131A] rounded-full flex items-center justify-center overflow-hidden border-[6px] border-[#0B0F19]">
-                    <User size={64} className="text-slate-500 mt-6" />
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=160&h=160&fit=crop&crop=face" alt="Arun Nair" className="w-full h-full object-cover" />
                  </div>
               </div>
 
-              <h2 className="text-4xl font-black mb-2 tracking-tight text-white">Kaviarasan</h2>
+              <h2 className="text-4xl font-black mb-2 tracking-tight text-white">Arun Nair</h2>
               <p className="text-[#818CF8] font-semibold text-sm mb-4 leading-relaxed max-w-[250px]">
-                 Master Carpenter & Furniture Designer
+                 Software Developer & Tech Enthusiast
               </p>
 
               <div className="flex items-center gap-2 mb-8">
@@ -74,7 +74,7 @@ const UserProfile = () => {
               <div className="bg-[#11131A] border border-[#1F2937]/70 rounded-2xl p-8 shadow-xl flex-1">
                  <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2"><Star className="text-[#818CF8]" fill="currentColor" size={16} /> About the Hustler</h3>
                  <p className="text-slate-400 font-medium leading-relaxed">
-                   Specializing in bespoke reclaimed wood furniture and structural restoration. With over 12 years of experience in the craft, I bring a meticulous eye for detail to every Local Hustle project. Whether it's a custom bookshelf or a kitchen overhaul, my goal is to blend functionality with artisanal beauty.
+                   Specializing in bespoke reclaimed wood furniture and structural restoration. With over 12 years of experience in the craft, I bring a meticulous eye for detail to every Jobzenix project. Whether it's a custom bookshelf or a kitchen overhaul, my goal is to blend functionality with artisanal beauty.
                  </p>
               </div>
 

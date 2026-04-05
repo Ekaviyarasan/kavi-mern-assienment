@@ -3,6 +3,7 @@ import {
   Map, Clock, Truck, Monitor, PawPrint, Star, Bookmark
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 const iconsMap = {
   Package: Package,
@@ -12,9 +13,30 @@ const iconsMap = {
   PawPrint: PawPrint
 };
 
-const JobCard = ({ job }) => {
+const JobCard = ({ job, isApplied = false }) => {
   const navigate = useNavigate();
   const IconComponent = iconsMap[job.icon] || Package;
+  const [applied, setApplied] = useState(isApplied);
+
+  useEffect(() => {
+    if (!isApplied) {
+      const stored = localStorage.getItem('appliedJobs');
+      if (stored) {
+        const appliedJobs = JSON.parse(stored);
+        setApplied(appliedJobs.some(appliedJob => appliedJob.id === job.id));
+      }
+    }
+  }, [job.id, isApplied]);
+
+  const handleApply = () => {
+    const stored = localStorage.getItem('appliedJobs');
+    let appliedJobs = stored ? JSON.parse(stored) : [];
+    if (!appliedJobs.some(appliedJob => appliedJob.id === job.id)) {
+      appliedJobs.push(job);
+      localStorage.setItem('appliedJobs', JSON.stringify(appliedJobs));
+      setApplied(true);
+    }
+  };
 
   return (
     <div 
@@ -22,26 +44,26 @@ const JobCard = ({ job }) => {
       className="bg-[#151923] border border-[#2A3143] rounded-2xl p-6 flex flex-col justify-between hover:border-[#3B4255] cursor-pointer transition-colors relative overflow-hidden group"
     >
       
-      {/* Top Header Row */}
-      <div className="flex justify-between items-start mb-4">
-        <div className="flex items-center gap-3">
-          {job.type !== 'map' && job.icon && (
-            <div className={`p-2.5 rounded-lg ${job.iconBgC}`}>
-              <IconComponent className={job.iconC} size={22} />
+        <div className="flex justify-between items-start mb-4">
+          <div className="flex items-center gap-3">
+            {job.type !== 'map' && job.icon && (
+              <div className={`p-2.5 rounded-lg ${job.iconBgC}`}>
+                <IconComponent className={job.iconC} size={22} />
+              </div>
+            )}
+            <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=24&h=24&fit=crop" alt="Company Logo" className="w-6 h-6 rounded" />
+            
+            <div>
+              <p className="text-[10px] text-slate-400 font-bold tracking-widest uppercase flex items-center gap-2">
+                {job.category}
+                {job.status === 'JUST NOW' && (
+                 <span className="bg-green-500/20 text-green-400 px-2 py-0.5 rounded-full text-[9px]">
+                   • JUST NOW
+                 </span>
+                )}
+              </p>
             </div>
-          )}
-          
-          <div>
-            <p className="text-[10px] text-slate-400 font-bold tracking-widest uppercase flex items-center gap-2">
-              {job.category}
-              {job.status === 'JUST NOW' && (
-               <span className="bg-green-500/20 text-green-400 px-2 py-0.5 rounded-full text-[9px]">
-                 • JUST NOW
-               </span>
-              )}
-            </p>
           </div>
-        </div>
 
         {job.status !== 'JUST NOW' && (
           <span className="text-xs text-slate-500 font-medium">{job.status}</span>
@@ -107,9 +129,7 @@ const JobCard = ({ job }) => {
         <div className="mb-6">
           <h3 className="text-xl font-bold text-white mb-4 pr-12">{job.title}</h3>
           <div className="flex items-center gap-3 bg-[#1C212E] p-3 rounded-xl w-max pr-6">
-            <div className="w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center text-white font-bold text-xs ring-2 ring-[#0B0F19]">
-              M
-            </div>
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face" alt="Rahul S." className="w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center text-white font-bold text-xs ring-2 ring-[#0B0F19]" />
             <div>
               <p className="text-sm text-white font-bold leading-tight">{job.user.name}</p>
               <div className="flex text-amber-400 text-[10px]">
@@ -164,16 +184,24 @@ const JobCard = ({ job }) => {
                 </div>
               )}
               
-              <button className={`${job.type === 'default' ? 'w-full' : 'px-6'} py-2.5 rounded-xl bg-[#818CF8] hover:bg-[#6366F1] text-white font-bold transition flex justify-center items-center gap-2`}>
-                Accept Job
+              <button 
+                onClick={(e) => { e.stopPropagation(); handleApply(); }}
+                disabled={applied}
+                className={`${job.type === 'default' ? 'w-full' : 'px-6'} py-2.5 rounded-xl ${applied ? 'bg-green-600' : 'bg-[#818CF8] hover:bg-[#6366F1]'} text-white font-bold transition flex justify-center items-center gap-2 disabled:opacity-50`}
+              >
+                {applied ? 'Applied' : 'Apply Now'}
                 {job.type === 'default' && <ChevronRight size={16} />}
               </button>
            </div>
         )}
 
         {job.type === 'details' && (
-           <button className="w-full py-3 rounded-xl bg-[#2A3143] hover:bg-[#3B4255] text-white font-bold transition text-sm">
-             View Details
+           <button 
+             onClick={(e) => { e.stopPropagation(); handleApply(); }}
+             disabled={applied}
+             className={`w-full py-3 rounded-xl ${applied ? 'bg-green-600' : 'bg-[#2A3143] hover:bg-[#3B4255]'} text-white font-bold transition text-sm disabled:opacity-50`}
+           >
+             {applied ? 'Applied' : 'Apply Now'}
            </button>
         )}
 
@@ -187,16 +215,24 @@ const JobCard = ({ job }) => {
                 <button className="p-3 rounded-xl bg-[#2A3143] hover:bg-[#3B4255] text-slate-300 transition">
                   <Bookmark size={18} />
                 </button>
-                <button className="px-6 py-3 rounded-xl bg-[#818CF8] hover:bg-[#6366F1] text-white font-bold transition">
-                  Accept
+                <button 
+                  onClick={(e) => { e.stopPropagation(); handleApply(); }}
+                  disabled={applied}
+                  className={`px-6 py-3 rounded-xl ${applied ? 'bg-green-600' : 'bg-[#818CF8] hover:bg-[#6366F1]'} text-white font-bold transition disabled:opacity-50`}
+                >
+                  {applied ? 'Applied' : 'Apply'}
                 </button>
              </div>
            </div>
         )}
 
         {job.type === 'map' && (
-           <button className="w-full py-3 rounded-xl bg-[#1C212E] border border-[#2A3143] hover:bg-[#2A3143] text-white font-bold transition text-sm">
-             {job.budget} • Apply Now
+           <button 
+             onClick={(e) => { e.stopPropagation(); handleApply(); }}
+             disabled={applied}
+             className={`w-full py-3 rounded-xl ${applied ? 'bg-green-600 border-green-600' : 'bg-[#1C212E] border-[#2A3143] hover:bg-[#2A3143]'} text-white font-bold transition text-sm disabled:opacity-50`}
+           >
+             {applied ? 'Applied' : `${job.budget} • Apply Now`}
            </button>
         )}
 

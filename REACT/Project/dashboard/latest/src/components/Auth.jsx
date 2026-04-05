@@ -30,9 +30,9 @@ const Auth = () => {
            {/* Top Branding */}
            <div className="text-center mb-10">
               <h1 className="text-3xl font-black tracking-tight mb-2">
-                 Tech <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#818CF8] to-[#C084FC]">ChennaiHub</span>
+                 Rozgar <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#818CF8] to-[#C084FC]">Hub</span>
               </h1>
-              <p className="text-slate-400 font-medium">The premium network for local talent.</p>
+              <p className="text-slate-400 font-medium">India's Leading Job Portal</p>
            </div>
 
            {/* Form Card */}
@@ -149,10 +149,10 @@ const Auth = () => {
          
          <div className="absolute bottom-0 left-0 w-full p-16 z-20">
             <h2 className="text-4xl lg:text-5xl font-black tracking-tighter mb-6 max-w-lg leading-tight">
-               Where Chennai's Top Talent <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#818CF8] to-[#C084FC]">Connects.</span>
+               India's Largest Job <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#818CF8] to-[#C084FC]">Community.</span>
             </h2>
             <p className="text-lg text-slate-300 max-w-md font-medium leading-relaxed">
-               Join thousands of engineers, designers, and creatives building the future, locally. The smartest gig network in the city.
+               Connect with top companies from Delhi to Chennai. Build your career with India's leading job platform trusted by millions.
             </p>
          </div>
       </div>

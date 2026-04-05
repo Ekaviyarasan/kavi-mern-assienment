@@ -12,7 +12,7 @@ const LandingPage = () => {
          {/* Logo */}
          <div className="flex items-center gap-2">
             <h1 className="text-xl font-bold tracking-tight cursor-pointer hover:text-slate-200 transition">
-              TechChennaiHub
+              Jobzenix
             </h1>
          </div>
 
@@ -29,7 +29,7 @@ const LandingPage = () => {
             <button className="text-slate-400 hover:text-white transition"><MessageSquare size={18} /></button>
             <div className="w-px h-6 bg-[#1F2937]/80"></div>
             <button className="w-8 h-8 bg-[#2A3143] rounded-full flex items-center justify-center ring-2 hover:ring-[#818CF8] ring-transparent transition">
-              <User size={16} className="text-slate-300" />
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face" alt="User Avatar" className="w-8 h-8 rounded-full" />
             </button>
          </div>
       </nav>
@@ -40,25 +40,30 @@ const LandingPage = () => {
          <section className="max-w-7xl mx-auto px-6 flex flex-col items-center text-center mt-12 mb-32">
             
             <div className="inline-flex items-center justify-center px-4 py-1.5 rounded-full border border-[#2A3143] bg-[#151923] text-xs font-bold tracking-[0.2em] uppercase text-slate-400 mb-8">
-               NEW ENTERPRISE Tech IS HERE
+               JOBZENIX TOP JOB PLATFORM
             </div>
             
             <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-6 leading-tight">
-               Find Tech Help <br/>
-               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#818CF8] to-[#C084FC] italic pe-2">Instantly.</span>
+               Find Your Dream Job <br/>
+               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#818CF8] to-[#C084FC] italic pe-2">in Tamil Nadu & Kerala.</span>
             </h1>
-
+            
             <p className="text-lg text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed font-medium">
-               The premium network for local talent. Whether you need a hand or you're lending one, we make the connection seamless, secure, and fast.
+               Connect with top companies across Tamil Nadu and Kerala. From startups in Chennai to corporations in Kochi, find opportunities that match your skills and aspirations.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-24">
                <button onClick={() => navigate('/marketplace')} className="px-8 py-4 rounded-xl bg-[#818CF8] hover:bg-[#6366F1] text-white font-bold transition flex items-center justify-center gap-2 group shadow-[0_0_20px_rgba(129,140,248,0.2)]">
-                  Post a Job <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                  Browse Jobs <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                </button>
                <button onClick={() => navigate('/marketplace')} className="px-8 py-4 rounded-xl bg-[#1C212E] hover:bg-[#2A3143] border border-[#2A3143] text-white font-bold transition">
-                  Find Work
+                  Post a Job
                </button>
+            </div>
+
+            {/* Hero Image */}
+            <div className="mb-16">
+              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=400&fit=crop" alt="Indian professionals working" className="w-full max-w-4xl mx-auto rounded-2xl shadow-2xl" />
             </div>
 
             {/* Dashboard Mockup Placeholder */}
@@ -165,7 +170,7 @@ const LandingPage = () => {
                      <span className="text-[#818CF8]">Modern Worker.</span>
                   </h2>
                   <p className="text-lg text-slate-400 max-w-md leading-relaxed font-medium">
-                     See why thousands of locals trust Local Hustle to power their daily tasks and professional growth.
+                     See why thousands of locals trust Jobzenix to power their daily tasks and professional growth.
                   </p>
                </div>
 
@@ -177,10 +182,10 @@ const LandingPage = () => {
                         "The UI is cleaner than any other marketplace I've used. I posted a job for a plumber and had three verified pros messaging me within 10 minutes."
                      </p>
                      <div className="flex items-center gap-4">
-                        <div className="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center text-xs font-bold ring-2 ring-[#0B0F19]">S</div>
+                        <div className="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center text-xs font-bold ring-2 ring-[#0B0F19]">R</div>
                         <div>
-                           <p className="text-sm font-bold text-white leading-tight">Sarah Jenkins</p>
-                           <p className="text-[11px] text-slate-500 font-semibold tracking-wider uppercase">Homeowner, Austin</p>
+                           <p className="text-sm font-bold text-white leading-tight">Rajesh Kumar</p>
+                           <p className="text-[11px] text-slate-500 font-semibold tracking-wider uppercase">Homeowner, Chennai</p>
                         </div>
                      </div>
                   </div>
@@ -191,10 +196,10 @@ const LandingPage = () => {
                         "Finally a tool that treats gig work with the respect it deserves. The analytics help me price my services perfectly for my zip code."
                      </p>
                      <div className="flex items-center gap-4">
-                        <div className="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center text-xs font-bold ring-2 ring-[#0B0F19]">M</div>
+                        <div className="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center text-xs font-bold ring-2 ring-[#0B0F19]">A</div>
                         <div>
-                           <p className="text-sm font-bold text-white leading-tight">Marcus Thorne</p>
-                           <p className="text-[11px] text-slate-500 font-semibold tracking-wider uppercase">Freelance Handyman</p>
+                           <p className="text-sm font-bold text-white leading-tight">Anjali Menon</p>
+                           <p className="text-[11px] text-slate-500 font-semibold tracking-wider uppercase">Freelance Developer</p>
                         </div>
                      </div>
                   </div>
@@ -207,7 +212,7 @@ const LandingPage = () => {
          {/* 5. CTA Area */}
          <section className="max-w-4xl mx-auto px-6 text-center mb-32">
             <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-10">
-               Ready to start your Tech Journy?
+               Ready to start your Jobzenix journey?
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
                <button onClick={() => navigate('/auth')} className="px-8 py-4 w-full sm:w-auto rounded-full bg-white hover:bg-slate-200 text-[#0B0F19] font-bold transition">
@@ -225,9 +230,9 @@ const LandingPage = () => {
       <footer className="border-t border-[#1F2937]/50 pt-20 pb-10 px-8 bg-[#0B0F19]">
          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
             <div className="md:col-span-1">
-               <h2 className="text-white text-lg font-bold tracking-tight mb-4">TechChennaiHub</h2>
+               <h2 className="text-white text-lg font-bold tracking-tight mb-4">Jobzenix</h2>
                <p className="text-slate-500 text-sm font-medium leading-relaxed max-w-xs">
-                  Connecting human potential to hyper-local needs since 2018.
+                  Connecting human potential to hyper-local needs across Tamil Nadu and Kerala since 2018.
                </p>
             </div>
             
@@ -260,7 +265,7 @@ const LandingPage = () => {
          </div>
 
          <div className="max-w-7xl mx-auto border-t border-[#1F2937]/50 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-mono font-bold tracking-widest text-slate-500 uppercase">
-            <p>© 2018  TechChennaiHub.</p>
+            <p>© 2018 Jobzenix.</p>
             <p>BUILT WITH PRECISION AT 40.7128° N, 74.0060° W</p>
          </div>
       </footer>

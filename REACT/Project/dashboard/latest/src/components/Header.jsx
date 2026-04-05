@@ -25,7 +25,7 @@ const Header = () => {
         <div className="w-px h-6 bg-[#1F2937]/80"></div>
         
         <button className="flex items-center justify-center w-8 h-8 bg-[#2A3143] rounded-full overflow-hidden ring-2 ring-transparent hover:ring-[#818CF8] transition">
-          <User className="text-slate-300" size={16} />
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face" alt="User Avatar" className="w-full h-full rounded-full" />
         </button>
       </div>
     </div>

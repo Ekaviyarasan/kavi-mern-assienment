@@ -11,9 +11,9 @@ const Dashboard = () => {
       
       {/* Welcome Header */}
       <div className="mb-8">
-        <h1 className="text-3xl font-extrabold mb-2 tracking-tight">Welcome back, Kavi</h1>
+        <h1 className="text-3xl font-extrabold mb-2 tracking-tight">Welcome back, Arun</h1>
         <p className="text-slate-400">
-          You have <span className="text-green-400 font-bold">3 active jobs</span> and 12 new marketplace opportunities.
+          You have <span className="text-green-400 font-bold">3 active jobs</span> and 12 new Jobzenix marketplace opportunities.
         </p>
       </div>
 
@@ -66,10 +66,8 @@ const Dashboard = () => {
               <div className="space-y-4">
                 {/* Active Job 1 */}
                 <div onClick={() => navigate('/job-details')} className="bg-[#151923] border border-[#2A3143] rounded-2xl p-4 flex gap-6 hover:border-[#3B4255] cursor-pointer transition">
-                  {/* Image Placeholder */}
-                  <div className="w-40 h-28 bg-gradient-to-br from-slate-700 to-slate-800 rounded-xl flex-shrink-0 relative overflow-hidden flex items-center justify-center">
-                     <FileText size={40} className="text-slate-600" />
-                  </div>
+                  {/* Job Image */}
+                  <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=160&h=112&fit=crop" alt="Plumbing work" className="w-40 h-28 rounded-xl flex-shrink-0 object-cover" />
                   
                   <div className="flex flex-col justify-between flex-1 py-1">
                      <div className="flex justify-between items-start">
@@ -99,10 +97,8 @@ const Dashboard = () => {
 
                 {/* Active Job 2 */}
                 <div onClick={() => navigate('/job-details')} className="bg-[#151923] border border-[#2A3143] rounded-2xl p-4 flex gap-6 hover:border-[#3B4255] cursor-pointer transition">
-                  {/* Image Placeholder */}
-                  <div className="w-40 h-28 bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl flex-shrink-0 relative overflow-hidden flex items-center justify-center">
-                     <FileText size={40} className="text-slate-700" />
-                  </div>
+                  {/* Job Image */}
+                  <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=160&h=112&fit=crop" alt="Mural painting" className="w-40 h-28 rounded-xl flex-shrink-0 object-cover" />
                   
                   <div className="flex flex-col justify-between flex-1 py-1">
                      <div className="flex justify-between items-start">
@@ -201,7 +197,7 @@ const Dashboard = () => {
                        <MessageSquare size={14} className="text-amber-500" fill="currentColor" />
                     </div>
                     <div>
-                       <p className="text-sm font-semibold text-white mb-1 leading-tight">New message from <span className="font-bold">Sarah Miller</span></p>
+                       <p className="text-sm font-semibold text-white mb-1 leading-tight">New message from <span className="font-bold">Priya Nair</span></p>
                        <p className="text-[10px] text-slate-500 uppercase tracking-widest font-mono">11:20 AM • "Hey, are you still available..."</p>
                     </div>
                  </div>

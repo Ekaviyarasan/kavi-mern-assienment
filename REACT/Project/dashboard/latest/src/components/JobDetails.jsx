@@ -150,7 +150,7 @@ const JobDetails = () => {
               </button>
 
               <p className="text-[9px] text-slate-500 uppercase tracking-wider text-center font-medium leading-relaxed px-2">
-                 By accepting, you agree to the <a href="#" className="underline">Local Hustle Service Terms</a> and insurance policy.
+                 By accepting, you agree to the <a href="#" className="underline">Jobzenix Service Terms</a> and insurance policy.
               </p>
            </div>
 

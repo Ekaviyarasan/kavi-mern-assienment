@@ -30,7 +30,7 @@ const Messages = () => {
           <div className="w-px h-6 bg-[#1F2937]/80"></div>
           
           <button className="flex items-center justify-center w-8 h-8 bg-[#2A3143] rounded-full overflow-hidden ring-2 ring-transparent hover:ring-[#818CF8] transition">
-            <User className="text-slate-300" size={16} />
+            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=32&h=32&fit=crop&crop=face" alt="User Avatar" className="w-full h-full rounded-full" />
           </button>
         </div>
       </div>
@@ -58,14 +58,14 @@ const Messages = () => {
                  
                  <div className="relative">
                     <div className="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 p-0.5">
-                       <div className="w-full h-full bg-[#0B0F19] rounded-full flex items-center justify-center text-sm font-bold overflow-hidden border-2 border-[#151923]">S</div>
+                       <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=48&h=48&fit=crop&crop=face" alt="Priya Nair" className="w-full h-full rounded-full border-2 border-[#151923]" />
                     </div>
                     <div className="absolute bottom-0 right-0 w-3.5 h-3.5 bg-green-500 border-2 border-[#151923] rounded-full"></div>
                  </div>
 
                  <div className="flex-1 min-w-0 flex flex-col justify-center">
                     <div className="flex justify-between items-center mb-1">
-                       <h3 className="font-bold text-white truncate text-sm">Sarah Jenkins</h3>
+                       <h3 className="font-bold text-white truncate text-sm">Priya Nair</h3>
                        <span className="text-[10px] text-[#818CF8] font-bold">2m</span>
                     </div>
                     <p className="text-xs text-slate-400 truncate">The design project is looking great so fa...</p>
@@ -75,12 +75,12 @@ const Messages = () => {
               {/* Chat Item 2 */}
               <div className="p-4 hover:bg-[#151923] cursor-pointer border-b border-[#1F2937]/40 flex gap-4 transition">
                  <div className="relative">
-                    <div className="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center text-sm font-bold overflow-hidden border-2 border-[#151923]">M</div>
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=48&h=48&fit=crop&crop=face" alt="Arun Menon" className="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center text-sm font-bold overflow-hidden border-2 border-[#151923]" />
                  </div>
 
                  <div className="flex-1 min-w-0 flex flex-col justify-center">
                     <div className="flex justify-between items-center mb-1">
-                       <h3 className="font-bold text-slate-300 truncate text-sm">Marcus Chen</h3>
+                       <h3 className="font-bold text-slate-300 truncate text-sm">Arun Menon</h3>
                        <span className="text-[10px] text-slate-500 font-bold">1h</span>
                     </div>
                     <p className="text-xs text-slate-500 truncate">Hey, are you still available for the bike rep...</p>
@@ -90,13 +90,13 @@ const Messages = () => {
               {/* Chat Item 3 */}
               <div className="p-4 hover:bg-[#151923] cursor-pointer border-b border-[#1F2937]/40 flex gap-4 transition">
                  <div className="relative">
-                    <div className="w-12 h-12 rounded-full bg-amber-600/20 text-amber-500 flex items-center justify-center text-sm font-bold overflow-hidden">JD</div>
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=48&h=48&fit=crop&crop=face" alt="Kavya Iyer" className="w-12 h-12 rounded-full bg-amber-600/20 text-amber-500 flex items-center justify-center text-sm font-bold overflow-hidden" />
                     <div className="absolute bottom-0 right-0 w-3.5 h-3.5 bg-green-500 border-2 border-[#151923] rounded-full"></div>
                  </div>
 
                  <div className="flex-1 min-w-0 flex flex-col justify-center">
                     <div className="flex justify-between items-center mb-1">
-                       <h3 className="font-bold text-slate-300 truncate text-sm">James D.</h3>
+                       <h3 className="font-bold text-slate-300 truncate text-sm">Kavya Iyer</h3>
                        <span className="text-[10px] text-slate-500 font-bold">3h</span>
                     </div>
                     <p className="text-xs text-slate-500 truncate">Payment received! Thanks for the quick h...</p>
@@ -106,13 +106,13 @@ const Messages = () => {
               {/* Chat Item 4 */}
               <div className="p-4 hover:bg-[#151923] cursor-pointer flex gap-4 transition">
                  <div className="relative">
-                    <div className="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center text-sm font-bold overflow-hidden border-2 border-[#151923]">E</div>
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=48&h=48&fit=crop&crop=face" alt="Vikram Singh" className="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center text-sm font-bold overflow-hidden border-2 border-[#151923]" />
                     <div className="absolute bottom-0 right-0 w-3.5 h-3.5 bg-green-500 border-2 border-[#151923] rounded-full"></div>
                  </div>
 
                  <div className="flex-1 min-w-0 flex flex-col justify-center">
                     <div className="flex justify-between items-center mb-1">
-                       <h3 className="font-bold text-slate-300 truncate text-sm">Elena Rodriguez</h3>
+                       <h3 className="font-bold text-slate-300 truncate text-sm">Vikram Nair</h3>
                        <span className="text-[10px] text-slate-500 font-bold">Yesterday</span>
                     </div>
                     <p className="text-xs text-slate-500 truncate">I'll send the location details in a bit.</p>
@@ -130,12 +130,12 @@ const Messages = () => {
               <div className="flex items-center gap-4">
                  <div className="relative">
                     <div className="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 p-0.5">
-                       <div className="w-full h-full bg-[#0B0F19] rounded-full flex items-center justify-center text-xs font-bold overflow-hidden border-2 border-[#151923]">A</div>
+                       <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=40&h=40&fit=crop&crop=face" alt="Rajesh Nair" className="w-full h-full bg-[#0B0F19] rounded-full flex items-center justify-center text-xs font-bold overflow-hidden border-2 border-[#151923]" />
                     </div>
                     <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-[#11131A] rounded-full"></div>
                  </div>
                  <div>
-                    <h2 className="text-lg font-bold">Ajith</h2>
+                    <h2 className="text-lg font-bold">Rajesh Nair</h2>
                     <p className="text-[10px] font-bold tracking-widest text-green-500 uppercase">Online Now</p>
                  </div>
               </div>
@@ -160,7 +160,7 @@ const Messages = () => {
                  <div className="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center text-xs font-bold overflow-hidden flex-shrink-0 mt-1">S</div>
                  <div className="flex flex-col gap-1">
                     <div className="bg-[#1C212E] border border-[#2A3143] text-slate-200 p-4 rounded-2xl rounded-tl-sm text-sm font-medium leading-relaxed">
-                       Hey! I saw your portfolio on the Local Hustle marketplace. I'm looking for someone to help with some brand identity work for my new coffee shop.
+                       Hey! I saw your portfolio on the Jobzenix marketplace. I'm looking for someone to help with some brand identity work for my new coffee shop.
                     </div>
                     <span className="text-[10px] text-slate-500 font-bold px-1">10:42 AM</span>
                  </div>
