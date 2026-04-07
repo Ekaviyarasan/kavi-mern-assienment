@@ -80,34 +80,27 @@ const LandingPage = () => {
       <main className="pt-32 pb-20">
          
          {/* 2. Hero Section */}
-         <section className="max-w-7xl mx-auto px-6 flex flex-col items-center text-center mt-12 mb-32 relative">
-            {/* Animated background elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-               <div className="absolute top-10 left-10 w-16 h-16 bg-emerald-200/30 rounded-full animate-float"></div>
-               <div className="absolute top-20 right-20 w-12 h-12 bg-purple-200/40 rounded-lg animate-float-delayed"></div>
-               <div className="absolute bottom-20 left-1/4 w-8 h-8 bg-pink-200/50 rounded-full animate-float-slow"></div>
-            </div>
-
-            <div className="inline-flex items-center justify-center px-4 py-1.5 rounded-full border border-emerald-200 bg-emerald-50 text-xs font-bold tracking-[0.2em] uppercase text-emerald-700 mb-8 animate-fade-in-up shadow-lg hover:shadow-xl transition-shadow duration-300">
+         <section className="max-w-7xl mx-auto px-6 flex flex-col items-center text-center mt-12 mb-32">
+            
+            <div className="inline-flex items-center justify-center px-4 py-1.5 rounded-full border border-emerald-200 bg-emerald-50 text-xs font-bold tracking-[0.2em] uppercase text-emerald-700 mb-8">
                JOBZENIX TOP JOB PLATFORM
             </div>
-
-            <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-6 leading-tight animate-fade-in-up animation-delay-200">
+            
+            <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-6 leading-tight">
                Find Your Dream Job <br/>
-               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-purple-600 italic pe-2 hover:from-purple-600 hover:to-emerald-600 transition-all duration-500">in Tamil Nadu & Kerala.</span>
+               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-purple-600 italic pe-2">in Tamil Nadu & Kerala.</span>
             </h1>
-
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed font-medium animate-fade-in-up animation-delay-400">
+            
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed font-medium">
                Connect with top companies across Tamil Nadu and Kerala. From startups in Chennai to corporations in Kochi, find opportunities that match your skills and aspirations.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-24 animate-fade-in-up animation-delay-600">
-               <button onClick={() => navigate('/marketplace')} className="px-8 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold transition-all duration-300 flex items-center justify-center gap-2 group shadow-[0_0_20px_rgba(16,185,129,0.3)] transform hover:scale-105 hover:shadow-[0_0_30px_rgba(16,185,129,0.4)]">
-                  Browse Jobs <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-300" />
+            <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-24">
+               <button onClick={() => navigate('/marketplace')} className="px-8 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold transition flex items-center justify-center gap-2 group shadow-[0_0_20px_rgba(16,185,129,0.3)] transform hover:scale-105">
+                  Browse Jobs <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                </button>
-               <button onClick={() => navigate('/marketplace')} className="px-8 py-4 rounded-xl bg-white hover:bg-gray-50 border border-gray-300 text-gray-700 font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-lg group">
+               <button onClick={() => navigate('/marketplace')} className="px-8 py-4 rounded-xl bg-white hover:bg-gray-50 border border-gray-300 text-gray-700 font-bold transition transform hover:scale-105">
                   Post a Job
-                  <span className="inline-block ml-2 transform group-hover:rotate-12 transition-transform duration-300">✨</span>
                </button>
             </div>
 
@@ -117,109 +110,123 @@ const LandingPage = () => {
             </div>
 
             {/* Dashboard Mockup Placeholder */}
-            <div className="w-full max-w-5xl rounded-t-3xl border border-gray-200 bg-white p-4 pb-0 overflow-hidden shadow-2xl relative group hover:shadow-3xl transition-all duration-500">
-               <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-purple-50/30 to-cyan-50/20 z-10 pointer-events-none group-hover:from-purple-50/50 group-hover:to-cyan-50/30 transition-all duration-500"></div>
-               <div className="w-full bg-gray-50 rounded-t-2xl border border-b-0 border-gray-200 h-96 p-8 relative flex flex-col gap-8 opacity-80 group-hover:opacity-95 transition-opacity duration-500">
+            <div className="w-full max-w-6xl rounded-t-3xl border border-gray-200 bg-slate-100 p-5 pb-0 overflow-hidden shadow-2xl relative mx-auto">
+               <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-slate-100/80 z-10 pointer-events-none"></div>
+               <div className="absolute top-14 right-10 hidden lg:block w-56 h-56 rounded-full bg-gradient-to-br from-fuchsia-300 via-cyan-200 to-slate-100 opacity-30 blur-3xl pointer-events-none"></div>
+               <div className="w-full bg-slate-50 rounded-t-2xl border border-b-0 border-gray-200 min-h-[620px] lg:min-h-[640px] p-10 relative flex flex-col gap-8 opacity-95">
 
                   {/* Top Stats Row */}
-                  <div className="w-full flex gap-6">
-                     <div className="h-40 bg-white border border-gray-200 rounded-xl flex-1 p-6 relative overflow-hidden group/stat hover:border-emerald-300 hover:shadow-lg transition-all duration-300 cursor-pointer">
+                  <div className="w-full flex flex-col xl:flex-row gap-6">
+                     <div className="h-52 bg-white border border-gray-200 rounded-3xl flex-1 p-8 relative overflow-hidden shadow-sm">
                         <div className="flex items-center justify-between mb-4">
-                           <h4 className="text-sm font-semibold text-gray-700 group-hover/stat:text-emerald-700 transition-colors">Active Jobs</h4>
-                           <div className="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center group-hover/stat:bg-emerald-200 transition-colors">
-                             <Search className="w-4 h-4 text-emerald-600" />
+                           <h4 className="text-sm font-semibold text-gray-700">Active Jobs</h4>
+                           <div className="w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center">
+                             <Search className="w-5 h-5 text-emerald-600" />
                            </div>
                         </div>
-                        <div className="text-3xl font-bold text-gray-900 mb-2 group-hover/stat:scale-110 transition-transform origin-left">24</div>
-                        <div className="text-xs text-emerald-600 font-medium mb-3">+12% from last month</div>
-                        <div className="w-full bg-gray-200 rounded-full h-1.5 mb-2">
-                           <div className="bg-emerald-500 h-1.5 rounded-full w-3/4 group-hover/stat:w-full transition-all duration-1000"></div>
-                        </div>
-                        <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-r from-emerald-50 to-emerald-100 opacity-50 group-hover/stat:opacity-70 transition-opacity"></div>
+                        <div className="text-4xl font-bold text-gray-900 mb-3">24</div>
+                        <div className="text-sm text-emerald-600 font-medium">+12% from last month</div>
+                        <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-r from-emerald-50 to-emerald-100 opacity-60"></div>
                      </div>
 
-                     <div className="h-40 bg-white border border-gray-200 rounded-xl flex-1 p-6 relative overflow-hidden group/stat hover:border-blue-300 hover:shadow-lg transition-all duration-300 cursor-pointer">
+                     <div className="h-52 bg-white border border-gray-200 rounded-3xl flex-1 p-8 relative overflow-hidden shadow-sm">
                         <div className="flex items-center justify-between mb-4">
-                           <h4 className="text-sm font-semibold text-gray-700 group-hover/stat:text-blue-700 transition-colors">Applications</h4>
-                           <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center group-hover/stat:bg-blue-200 transition-colors">
-                             <User className="w-4 h-4 text-blue-600" />
+                           <h4 className="text-sm font-semibold text-gray-700">Applications</h4>
+                           <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
+                             <User className="w-5 h-5 text-blue-600" />
                            </div>
                         </div>
-                        <div className="text-3xl font-bold text-gray-900 mb-2 group-hover/stat:scale-110 transition-transform origin-left">156</div>
-                        <div className="text-xs text-blue-600 font-medium mb-3">+8% from last week</div>
-                        <div className="w-full bg-gray-200 rounded-full h-1.5 mb-2">
-                           <div className="bg-blue-500 h-1.5 rounded-full w-2/3 group-hover/stat:w-5/6 transition-all duration-1000"></div>
-                        </div>
-                        <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-r from-blue-50 to-blue-100 opacity-50 group-hover/stat:opacity-70 transition-opacity"></div>
+                        <div className="text-4xl font-bold text-gray-900 mb-3">156</div>
+                        <div className="text-sm text-blue-600 font-medium">+8% from last week</div>
+                        <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-r from-blue-50 to-blue-100 opacity-60"></div>
                      </div>
 
-                     <div className="h-40 bg-white border border-gray-200 rounded-xl flex-1 p-6 relative overflow-hidden group/stat hover:border-purple-300 hover:shadow-lg transition-all duration-300 cursor-pointer">
+                     <div className="h-52 bg-white border border-gray-200 rounded-3xl flex-1 p-8 relative overflow-hidden shadow-sm">
                         <div className="flex items-center justify-between mb-4">
-                           <h4 className="text-sm font-semibold text-gray-700 group-hover/stat:text-purple-700 transition-colors">Completed</h4>
-                           <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center group-hover/stat:bg-purple-200 transition-colors">
-                             <Shield className="w-4 h-4 text-purple-600" />
+                           <h4 className="text-sm font-semibold text-gray-700">Completed</h4>
+                           <div className="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center">
+                             <Shield className="w-5 h-5 text-purple-600" />
                            </div>
                         </div>
-                        <div className="text-3xl font-bold text-gray-900 mb-2 group-hover/stat:scale-110 transition-transform origin-left">89</div>
-                        <div className="text-xs text-purple-600 font-medium mb-3">+15% success rate</div>
-                        <div className="w-full bg-gray-200 rounded-full h-1.5 mb-2">
-                           <div className="bg-purple-500 h-1.5 rounded-full w-4/5 group-hover/stat:w-full transition-all duration-1000"></div>
-                        </div>
-                        <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-r from-purple-50 to-purple-100 opacity-50 group-hover/stat:opacity-70 transition-opacity"></div>
+                        <div className="text-4xl font-bold text-gray-900 mb-3">89</div>
+                        <div className="text-sm text-purple-600 font-medium">+15% success rate</div>
+                        <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-r from-purple-50 to-purple-100 opacity-60"></div>
                      </div>
                   </div>
 
                   {/* Bottom Content Row */}
-                  <div className="w-full flex gap-6">
+                  <div className="w-full flex flex-col xl:flex-row gap-6">
                      {/* Recent Jobs */}
-                     <div className="h-32 bg-white border border-gray-200 rounded-xl w-64 p-4 hover:border-emerald-300 hover:shadow-lg transition-all duration-300 group/jobs">
-                        <h4 className="text-sm font-semibold text-gray-700 mb-3 group-hover/jobs:text-emerald-700 transition-colors">Recent Jobs</h4>
-                        <div className="space-y-2">
-                           <div className="flex items-center gap-2 p-2 rounded-lg hover:bg-emerald-50 transition-colors cursor-pointer group/job">
-                             <div className="w-6 h-6 bg-emerald-100 rounded-full flex items-center justify-center text-xs font-bold text-emerald-700">P</div>
+                     <div className="h-60 bg-white border border-gray-200 rounded-3xl w-full xl:w-72 p-6 shadow-sm">
+                        <h4 className="text-sm font-semibold text-gray-700 mb-4">Recent Jobs</h4>
+                        <div className="space-y-3">
+                           <div className="flex items-center gap-3 rounded-2xl p-3 bg-slate-50">
+                             <div className="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center text-xs font-semibold text-emerald-700">P</div>
                              <div className="flex-1">
-                               <div className="text-xs font-medium text-gray-900 group-hover/job:text-emerald-800 transition-colors">Plumbing Service</div>
+                               <div className="text-sm font-semibold text-gray-900">Plumbing Service</div>
                                <div className="text-xs text-gray-500">Chennai • 2h ago</div>
                              </div>
-                             <div className="text-xs font-semibold text-emerald-600 group-hover/job:text-emerald-700 transition-colors">₹2,500</div>
+                             <div className="text-sm font-semibold text-emerald-600">₹2,500</div>
                            </div>
-                           <div className="flex items-center gap-2 p-2 rounded-lg hover:bg-blue-50 transition-colors cursor-pointer group/job">
-                             <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center text-xs font-bold text-blue-700">W</div>
+                           <div className="flex items-center gap-3 rounded-2xl p-3 bg-slate-50">
+                             <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center text-xs font-semibold text-blue-700">W</div>
                              <div className="flex-1">
-                               <div className="text-xs font-medium text-gray-900 group-hover/job:text-blue-800 transition-colors">Web Development</div>
+                               <div className="text-sm font-semibold text-gray-900">Web Development</div>
                                <div className="text-xs text-gray-500">Kochi • 4h ago</div>
                              </div>
-                             <div className="text-xs font-semibold text-blue-600 group-hover/job:text-blue-700 transition-colors">₹15,000</div>
+                             <div className="text-sm font-semibold text-blue-600">₹15,000</div>
                            </div>
                         </div>
                      </div>
 
                      {/* Activity Feed */}
-                     <div className="h-32 bg-white border border-gray-200 rounded-xl flex-1 p-4 hover:border-purple-300 hover:shadow-lg transition-all duration-300 group/feed">
-                        <h4 className="text-sm font-semibold text-gray-700 mb-3 group-hover/feed:text-purple-700 transition-colors">Activity Feed</h4>
-                        <div className="space-y-2">
-                           <div className="flex items-start gap-2 p-2 rounded-lg hover:bg-emerald-50 transition-colors cursor-pointer group/activity">
-                             <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2 group-hover/activity:animate-ping"></div>
+                     <div className="h-60 bg-white border border-gray-200 rounded-3xl flex-1 p-6 shadow-sm">
+                        <h4 className="text-sm font-semibold text-gray-700 mb-4">Activity Feed</h4>
+                        <div className="space-y-3">
+                           <div className="flex items-start gap-3 rounded-2xl p-3 bg-slate-50">
+                             <div className="w-2.5 h-2.5 bg-emerald-500 rounded-full mt-2"></div>
                              <div className="flex-1">
-                               <div className="text-xs text-gray-900 group-hover/activity:text-emerald-800 transition-colors">New application received for <span className="font-medium text-emerald-600">Electrical Work</span></div>
+                               <div className="text-sm text-gray-900">New application received for <span className="font-medium">Electrical Work</span></div>
                                <div className="text-xs text-gray-500">5 min ago</div>
                              </div>
                            </div>
-                           <div className="flex items-start gap-2 p-2 rounded-lg hover:bg-blue-50 transition-colors cursor-pointer group/activity">
-                             <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 group-hover/activity:animate-pulse"></div>
+                           <div className="flex items-start gap-2 rounded-2xl p-3 bg-slate-50">
+                             <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
                              <div className="flex-1">
-                               <div className="text-xs text-gray-900 group-hover/activity:text-blue-800 transition-colors">Payment released for <span className="font-medium text-blue-600">Garden Maintenance</span></div>
+                               <div className="text-xs text-gray-900">Payment released for <span className="font-medium">Garden Maintenance</span></div>
                                <div className="text-xs text-gray-500">1h ago</div>
                              </div>
                            </div>
-                           <div className="flex items-start gap-2 p-2 rounded-lg hover:bg-purple-50 transition-colors cursor-pointer group/activity">
-                             <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 group-hover/activity:animate-bounce"></div>
+                           <div className="flex items-start gap-2 rounded-2xl p-3 bg-slate-50">
+                             <div className="w-2 h-2 bg-purple-500 rounded-full mt-2"></div>
                              <div className="flex-1">
-                               <div className="text-xs text-gray-900 group-hover/activity:text-purple-800 transition-colors">Review received: <span className="font-medium text-purple-600">5 stars</span> for completed job</div>
+                               <div className="text-xs text-gray-900">Review received: <span className="font-medium">5 stars</span> for completed job</div>
                                <div className="text-xs text-gray-500">2h ago</div>
                              </div>
                            </div>
                         </div>
+                     </div>
+
+                     {/* Color + Image Panel */}
+                     <div className="relative h-60 w-full xl:w-80 overflow-hidden rounded-3xl bg-gradient-to-br from-cyan-500 via-violet-500 to-pink-500 shadow-lg">
+                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.35),transparent_25%),radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.18),transparent_30%)]"></div>
+                        <div className="relative z-10 flex h-full flex-col justify-between p-5 text-white">
+                           <div>
+                              <p className="text-xs uppercase tracking-[0.3em] text-white/80">Live Insight</p>
+                              <h4 className="mt-3 text-lg font-bold">Performance Pulse</h4>
+                           </div>
+                           <div className="grid gap-3">
+                              <div className="rounded-3xl bg-white/15 p-4 backdrop-blur-sm">
+                                 <p className="text-[11px] uppercase tracking-[0.3em] text-white/80">Conversion</p>
+                                 <p className="mt-2 text-2xl font-bold">82%</p>
+                              </div>
+                              <div className="rounded-3xl bg-white/15 p-4 backdrop-blur-sm">
+                                 <p className="text-[11px] uppercase tracking-[0.3em] text-white/80">Response Time</p>
+                                 <p className="mt-2 text-2xl font-bold">1.2m</p>
+                              </div>
+                           </div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=320&h=240&fit=crop" alt="Dashboard chart" className="absolute bottom-4 right-4 w-28 h-20 rounded-3xl border border-white/30 object-cover shadow-xl" />
                      </div>
                   </div>
 
