@@ -53,13 +53,13 @@ const UserProfile = () => {
                    <CheckCircle2 size={10} fill="currentColor" className="text-green-200" /> VERIFIED PRO
                  </span>
                  <span className="bg-[#1C212E] border border-[#2A3143] font-mono tracking-tight text-[10px] px-3 py-1 rounded-sm text-slate-300">
-                   @kaviarasan7778@gmail.com
+                   @arunnair7777@gmail.com
                  </span>
               </div>
 
               <div className="flex w-full gap-3">
                  <button className="flex-1 px-4 py-3 bg-[#818CF8] hover:bg-[#6366F1] font-bold text-white rounded-xl transition shadow-[0_0_15px_rgba(129,140,248,0.2)]">
-                   Hire Kavi
+                   Hire Arun
                  </button>
                  <button className="flex-1 px-4 py-3 bg-[#1C212E] hover:bg-[#2A3143] border border-[#2A3143] font-bold text-slate-300 rounded-xl transition">
                    Message
