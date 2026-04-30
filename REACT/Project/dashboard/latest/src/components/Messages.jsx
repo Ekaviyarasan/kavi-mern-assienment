@@ -2,7 +2,7 @@ import { Search, Bell, MessageSquare, User, Video, Phone, MoreVertical, FileText
 
 const Messages = () => {
   return (
-    <div className="flex-1 flex flex-col h-screen bg-[#0B0F19] text-white overflow-hidden">
+    <div className="flex-1 flex flex-col h-screen overflow-hidden bg-[#0B0F19] text-white">
       
       {/* Top Header specific to Messages */}
       <div className="h-20 border-b border-[#1F2937]/60 px-8 flex flex-shrink-0 items-center justify-between sticky top-0 z-10 w-full bg-[#0B0F19]">

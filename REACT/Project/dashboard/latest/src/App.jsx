@@ -10,12 +10,14 @@ import UserProfile from './components/UserProfile';
 import AppliedJobs from './components/AppliedJobs';
 import SearchHistory from './components/SearchHistory';
 import Auth from './components/Auth';
+import Company from './components/Company';
+import MyGigs from './components/MyGigs';
 import './App.css';
 
 function ApplicationLayout({ children }) {
   const location = useLocation();
   const currentView = location.pathname.replace('/', '') || 'landing';
-  const showHeader = currentView !== 'messages' && currentView !== 'profile';
+  const showHeader = currentView !== 'messages' && currentView !== 'profile' && currentView !== 'company';
 
   return (
     <div className="flex h-screen overflow-hidden bg-[#0B0F19] font-sans antialiased text-white">
@@ -40,9 +42,11 @@ function App() {
       <Route path="/marketplace" element={<ApplicationLayout><JobFeed /></ApplicationLayout>} />
       <Route path="/job-details" element={<ApplicationLayout><JobDetails /></ApplicationLayout>} />
       <Route path="/applied-jobs" element={<ApplicationLayout><AppliedJobs /></ApplicationLayout>} />
+      <Route path="/my-gigs" element={<ApplicationLayout><MyGigs /></ApplicationLayout>} />
       <Route path="/search-history" element={<ApplicationLayout><SearchHistory /></ApplicationLayout>} />
       <Route path="/messages" element={<ApplicationLayout><Messages /></ApplicationLayout>} />
       <Route path="/profile" element={<ApplicationLayout><UserProfile /></ApplicationLayout>} />
+      <Route path="/company" element={<ApplicationLayout><Company /></ApplicationLayout>} />
     </Routes>
   );
 }

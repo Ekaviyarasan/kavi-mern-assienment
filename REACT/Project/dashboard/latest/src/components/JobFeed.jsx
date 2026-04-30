@@ -79,7 +79,7 @@ const JobFeed = () => {
   return (
     <div className="flex-1 overflow-y-auto bg-[#0B0F19] text-white p-8">
       
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto rounded-[32px] border border-white/10 bg-[#0B0F19]/95 p-8 shadow-2xl shadow-slate-950/40">
         {/* Header Area */}
         <div className="mb-8">
           <div className="flex items-center gap-2 text-green-400 text-xs font-bold tracking-widest uppercase mb-3">
@@ -88,10 +88,10 @@ const JobFeed = () => {
           </div>
           
           <h1 className="text-4xl font-extrabold tracking-tight mb-2">
-            Discover New <span className="text-[#818CF8]">Jobs</span>
+            Discover New <span className="text-white">Jobs</span>
           </h1>
           
-          <p className="text-slate-400 text-lg max-w-2xl">
+          <p className="text-white/60 text-lg max-w-2xl">
             Jobzenix real-time opportunities across Tamil Nadu and Kerala. Curated for your skills and location.
           </p>
         </div>

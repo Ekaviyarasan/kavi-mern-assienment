@@ -2,9 +2,9 @@ import { MapPin, DollarSign, Clock, LayoutList, Text, Camera } from 'lucide-reac
 
 const PostJob = () => {
   return (
-    <div className="flex-1 overflow-y-auto px-10 py-8 text-white bg-[#0B0F19]">
+    <div className="flex-1 overflow-y-auto bg-[#0B0F19] px-10 py-8 text-white">
       
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl mx-auto rounded-[32px] border border-white/10 bg-[#0B0F19]/95 p-10 shadow-2xl shadow-slate-950/40">
          {/* Top Header */}
          <div className="mb-10 text-center">
             <h1 className="text-4xl lg:text-5xl font-black tracking-tight mb-4">

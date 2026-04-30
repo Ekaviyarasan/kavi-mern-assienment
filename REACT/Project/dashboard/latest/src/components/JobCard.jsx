@@ -45,13 +45,18 @@ const JobCard = ({ job, isApplied = false }) => {
     >
       
         <div className="flex justify-between items-start mb-4">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 flex-1">
             {job.type !== 'map' && job.icon && (
               <div className={`p-2.5 rounded-lg ${job.iconBgC}`}>
                 <IconComponent className={job.iconC} size={22} />
               </div>
             )}
-            <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=24&h=24&fit=crop" alt="Company Logo" className="w-6 h-6 rounded" />
+            <button 
+              onClick={(e) => { e.stopPropagation(); navigate(`/company?id=${job.companyId || 1}`); }}
+              className="hover:opacity-80 transition"
+            >
+              <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=24&h=24&fit=crop" alt="Company Logo" className="w-6 h-6 rounded" />
+            </button>
             
             <div>
               <p className="text-[10px] text-slate-400 font-bold tracking-widest uppercase flex items-center gap-2">

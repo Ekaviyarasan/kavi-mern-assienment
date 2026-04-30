@@ -51,7 +51,7 @@ const LandingPage = () => {
               Marketplace
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-600 transition-all duration-300 group-hover:w-full"></span>
             </button>
-            <button onClick={() => navigate('/marketplace')} className="relative text-gray-500 hover:text-gray-700 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-gray-50 group">
+            <button onClick={() => navigate('/my-gigs')} className="relative text-gray-500 hover:text-gray-700 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-gray-50 group">
               My Gigs
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-600 transition-all duration-300 group-hover:w-full"></span>
             </button>
