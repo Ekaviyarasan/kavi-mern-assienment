@@ -3,18 +3,9 @@ import { Search, Bell, MessageSquare, User } from 'lucide-react';
 const Header = () => {
   return (
     <div className="h-20 border-b border-white/10 bg-[#0B0F19] px-8 flex items-center justify-between sticky top-0 z-10 w-full">
-      {/* Search Bar */}
-      <div className="relative w-96">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-white/40" size={18} />
-        <input 
-          type="text" 
-          placeholder="Search hustles..." 
-          className="w-full bg-white/5 border border-white/20 text-white text-sm rounded-xl pl-10 pr-4 py-2.5 outline-none focus:border-white/40 transition-colors placeholder-white/40"
-        />
-      </div>
 
       {/* Right Side Actions */}
-      <div className="flex items-center gap-6">
+      <div className="flex items-center gap-6 ml-auto">
         <button className="text-white/60 hover:text-white transition">
            <Bell size={20} />
         </button>

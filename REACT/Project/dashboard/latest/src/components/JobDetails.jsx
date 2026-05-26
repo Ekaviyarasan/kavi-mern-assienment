@@ -1,6 +1,18 @@
+import { useLocation } from 'react-router-dom';
 import { MapPin, Clock, CheckCircle2, MessageSquare, Star, ChevronRight } from 'lucide-react';
 
 const JobDetails = () => {
+  const location = useLocation();
+  const job = location.state?.job;
+  const candidateName = job?.applicantName || job?.user?.name || 'You';
+  const appliedAt = job?.appliedAt || 'Unknown';
+  const applicationStatus = job?.applicationStatus || 'Applied';
+  const title = job?.title || 'Premium Furniture Delivery & Assembly';
+  const description = job?.description || 'Looking for a careful and experienced individual to assist with the transport and assembly of a large modular sofa from West Elm. The item is currently at a warehouse in Burbank and needs to be delivered to a residential 3rd-floor apartment in Silverlake.';
+  const locationLabel = job?.location || 'Silverlake, Los Angeles';
+  const timeLabel = job?.estimatedTime ? `${job.estimatedTime}` : 'Starts 2h from now';
+  const payout = job?.budget || job?.rate || '$185.00';
+
   return (
     <div className="flex-1 overflow-y-auto bg-[#0B0F19] px-10 py-8 text-white relative">
       <div className="mx-auto max-w-7xl rounded-[32px] border border-white/10 bg-[#0B0F19]/95 p-10 shadow-2xl shadow-slate-950/40">
@@ -26,7 +38,7 @@ const JobDetails = () => {
               </div>
 
               <h1 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-5">
-                Premium Furniture Delivery & Assembly
+                {title}
               </h1>
 
               <div className="flex items-center gap-6 text-white/60 font-medium text-sm">
@@ -34,13 +46,13 @@ const JobDetails = () => {
                   <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center">
                     <MapPin size={14} className="text-white" fill="currentColor" />
                   </div>
-                  Silverlake, Los Angeles
+                  {locationLabel}
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center">
                     <Clock size={14} className="text-white" fill="currentColor" />
                   </div>
-                  Starts 2h from now
+                  {timeLabel}
                 </div>
               </div>
             </div>
@@ -53,7 +65,7 @@ const JobDetails = () => {
               </div>
 
               <p className="text-slate-300 font-medium leading-relaxed mb-8">
-                Looking for a careful and experienced individual to assist with the transport and assembly of a large modular sofa from West Elm. The item is currently at a warehouse in Burbank and needs to be delivered to a residential 3rd-floor apartment in Silverlake.
+                {description}
               </p>
 
               <div className="space-y-4 mb-10">
@@ -74,11 +86,11 @@ const JobDetails = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <div className="bg-[#11131A] border border-[#1F2937] p-5 rounded-2xl flex-1 flex flex-col justify-center">
                   <p className="text-[10px] text-slate-500 font-bold mb-2 uppercase tracking-widest">Estimated Time</p>
-                  <p className="text-2xl font-bold text-white">3.5 Hours</p>
+                  <p className="text-2xl font-bold text-white">{job?.estimatedTime || '3.5 Hours'}</p>
                 </div>
                 <div className="bg-[#11131A] border border-[#1F2937] p-5 rounded-2xl flex-1 flex flex-col justify-center">
                   <p className="text-[10px] text-slate-500 font-bold mb-2 uppercase tracking-widest">Total Payout</p>
-                  <p className="text-2xl font-bold font-mono tracking-tight text-green-400">$185.00</p>
+                  <p className="text-2xl font-bold font-mono tracking-tight text-green-400">{payout}</p>
                 </div>
               </div>
             </div>
@@ -102,27 +114,33 @@ const JobDetails = () => {
 
           <div className="space-y-6 lg:sticky lg:top-8">
             <div className="bg-[#151923] border border-[#2A3143] rounded-3xl p-6 text-center shadow-xl">
-              <p className="text-[10px] text-slate-500 font-bold mb-6 uppercase tracking-widest">Posted By</p>
+              <p className="text-[10px] text-slate-500 font-bold mb-6 uppercase tracking-widest">Candidate</p>
               <div className="relative w-20 h-20 mx-auto mb-4">
                 <div className="w-full h-full rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 p-1">
                   <div className="w-full h-full bg-[#0B0F19] rounded-full overflow-hidden border-2 border-[#151923] flex items-center justify-center text-xl font-bold">
-                    S
+                    {candidateName.charAt(0).toUpperCase()}
                   </div>
                 </div>
                 <div className="absolute bottom-0 right-0 w-5 h-5 bg-green-500 border-2 border-[#151923] rounded-full"></div>
               </div>
-              <h3 className="text-xl font-bold text-white mb-1">Sarah Jenkins</h3>
-              <p className="text-xs text-slate-400 font-medium mb-4">Premium Member • 48 Hustles</p>
-              <div className="flex items-center justify-center gap-1.5 mb-6 text-amber-500">
-                <Star fill="currentColor" size={16} />
-                <Star fill="currentColor" size={16} />
-                <Star fill="currentColor" size={16} />
-                <Star fill="currentColor" size={16} />
-                <Star fill="currentColor" size={16} />
-                <span className="text-white font-bold ml-1 flex items-center">4.9</span>
+              <h3 className="text-xl font-bold text-white mb-1">{candidateName}</h3>
+              <p className="text-xs text-slate-400 font-medium mb-4">Applied on {appliedAt}</p>
+              <div className="space-y-3 text-sm text-white/70 mb-6">
+                <div className="flex items-center justify-between">
+                  <span className="text-white/50">Application Status</span>
+                  <span className="font-semibold text-white">{applicationStatus}</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-white/50">Email</span>
+                  <span className="font-semibold text-white">you@example.com</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-white/50">Phone</span>
+                  <span className="font-semibold text-white">+91 98765 43210</span>
+                </div>
               </div>
               <button className="w-full py-3 rounded-xl border border-[#2A3143] bg-[#11131A] hover:bg-[#1C212E] text-slate-300 font-bold transition flex justify-center items-center gap-2 text-sm">
-                <MessageSquare size={16} fill="currentColor" /> Chat with Sarah
+                <MessageSquare size={16} fill="currentColor" /> Chat with Candidate
               </button>
             </div>
 

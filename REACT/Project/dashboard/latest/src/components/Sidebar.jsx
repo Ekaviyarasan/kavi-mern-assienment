@@ -8,7 +8,7 @@ const Sidebar = () => {
   // Parse route to determine active icon
   let currentView = location.pathname.replace('/', '') || 'dashboard';
   if (currentView === 'job-details') currentView = 'marketplace';
-  if (currentView === 'applied-jobs') currentView = 'applied-jobs';
+  if (currentView === 'applied-jobs' || currentView === 'candidates') currentView = 'candidates';
 
   return (
     <div className="w-64 flex-shrink-0 bg-white/5 h-screen flex flex-col justify-between border-r border-white/10 px-4 py-6 text-white/70 backdrop-blur-sm">
@@ -52,12 +52,12 @@ const Sidebar = () => {
           </button>
           
           <button 
-            onClick={() => navigate('/applied-jobs')}
-            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors font-medium text-left ${currentView === 'applied-jobs' ? 'bg-white/10 text-white relative' : 'hover:bg-white/5'}`}
+            onClick={() => navigate('/candidates')}
+            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors font-medium text-left ${currentView === 'candidates' ? 'bg-white/10 text-white relative' : 'hover:bg-white/5'}`}
           >
-            {currentView === 'applied-jobs' && <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-white rounded-r-md"></div>}
+            {currentView === 'candidates' && <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-white rounded-r-md"></div>}
             <Briefcase size={20} />
-            Applied Jobs
+            Candidates
           </button>
           
           <button 

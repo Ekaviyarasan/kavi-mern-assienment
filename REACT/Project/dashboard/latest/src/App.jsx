@@ -7,7 +7,7 @@ import LandingPage from './components/LandingPage';
 import JobDetails from './components/JobDetails';
 import Messages from './components/Messages';
 import UserProfile from './components/UserProfile';
-import AppliedJobs from './components/AppliedJobs';
+import Candidates from './components/Candidates';
 import SearchHistory from './components/SearchHistory';
 import Auth from './components/Auth';
 import Company from './components/Company';
@@ -41,7 +41,8 @@ function App() {
       <Route path="/dashboard" element={<ApplicationLayout><Dashboard /></ApplicationLayout>} />
       <Route path="/marketplace" element={<ApplicationLayout><JobFeed /></ApplicationLayout>} />
       <Route path="/job-details" element={<ApplicationLayout><JobDetails /></ApplicationLayout>} />
-      <Route path="/applied-jobs" element={<ApplicationLayout><AppliedJobs /></ApplicationLayout>} />
+      <Route path="/applied-jobs" element={<ApplicationLayout><Candidates /></ApplicationLayout>} />
+      <Route path="/candidates" element={<ApplicationLayout><Candidates /></ApplicationLayout>} />
       <Route path="/my-gigs" element={<ApplicationLayout><MyGigs /></ApplicationLayout>} />
       <Route path="/search-history" element={<ApplicationLayout><SearchHistory /></ApplicationLayout>} />
       <Route path="/messages" element={<ApplicationLayout><Messages /></ApplicationLayout>} />

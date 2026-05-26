@@ -158,5 +158,35 @@ export const jobsData = [
     icon: 'PawPrint',
     iconBgC: 'bg-slate-800',
     iconC: 'text-slate-300'
+  },
+  {
+    id: 13,
+    type: 'details',
+    category: 'TECHNOLOGY',
+    title: 'IT Support Technician',
+    status: '15 MINS AGO',
+    estimatedTime: '4 Hours',
+    location: 'Remote / Chennai',
+    rate: '₹1,800.00',
+    description: 'Assist customers and internal teams with hardware and software troubleshooting, remote support, and ticket resolution.',
+    company: 'TechFix',
+    icon: 'Monitor',
+    iconBgC: 'bg-cyan-500/10',
+    iconC: 'text-cyan-400'
+  },
+  {
+    id: 14,
+    type: 'default',
+    category: 'TECHNOLOGY',
+    title: 'Full Stack Developer - MERN',
+    status: 'JUST NOW',
+    budget: '₹18,500.00',
+    distance: 'Remote / Bangalore',
+    location: 'Remote / Bangalore',
+    description: 'Build and maintain web applications using MongoDB, Express, React, and Node.js for a fast-growing startup.',
+    company: 'CodeWave',
+    icon: 'Monitor',
+    iconBgC: 'bg-indigo-500/10',
+    iconC: 'text-indigo-400'
   }
 ];

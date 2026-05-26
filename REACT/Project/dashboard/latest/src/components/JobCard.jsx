@@ -32,7 +32,13 @@ const JobCard = ({ job, isApplied = false }) => {
     const stored = localStorage.getItem('appliedJobs');
     let appliedJobs = stored ? JSON.parse(stored) : [];
     if (!appliedJobs.some(appliedJob => appliedJob.id === job.id)) {
-      appliedJobs.push(job);
+      const appliedJob = {
+        ...job,
+        appliedAt: new Date().toLocaleString(),
+        applicantName: 'You',
+        applicationStatus: 'Applied'
+      };
+      appliedJobs.push(appliedJob);
       localStorage.setItem('appliedJobs', JSON.stringify(appliedJobs));
       setApplied(true);
     }

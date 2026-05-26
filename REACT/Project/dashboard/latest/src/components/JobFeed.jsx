@@ -45,9 +45,13 @@ const JobFeed = () => {
 
     const results = jobsData.filter(job => {
       const lowerTerm = term.toLowerCase();
+      const categoryMatch = job.category?.toLowerCase().includes(lowerTerm);
+      const techFallback = (lowerTerm.includes('it') || lowerTerm.includes('tech') || lowerTerm.includes('technology')) && job.category === 'TECHNOLOGY';
       return job.title.toLowerCase().includes(lowerTerm) ||
         job.company?.toLowerCase().includes(lowerTerm) ||
-        job.description?.toLowerCase().includes(lowerTerm);
+        job.description?.toLowerCase().includes(lowerTerm) ||
+        categoryMatch ||
+        techFallback;
     }).length;
 
     const history = JSON.parse(localStorage.getItem(searchHistoryKey) || '[]');
@@ -62,13 +66,18 @@ const JobFeed = () => {
   }, []);
 
   const filteredJobs = jobsData.filter(job => {
-    const matchesSearch = job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      job.company?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      job.description?.toLowerCase().includes(searchTerm.toLowerCase());
+    const lowerTerm = searchTerm.toLowerCase();
+    const matchesSearch = !lowerTerm ||
+      job.title.toLowerCase().includes(lowerTerm) ||
+      job.company?.toLowerCase().includes(lowerTerm) ||
+      job.description?.toLowerCase().includes(lowerTerm) ||
+      job.category?.toLowerCase().includes(lowerTerm) ||
+      ((lowerTerm.includes('it') || lowerTerm.includes('tech') || lowerTerm.includes('technology')) && job.category === 'TECHNOLOGY');
     const categoryMap = {
       'Delivery': 'DELIVERY SERVICE',
       'Creative': 'CREATIVE',
       'Tech': 'TECHNOLOGY',
+      'IT': 'TECHNOLOGY',
       'Maintenance': 'MAINTENANCE',
       'Teaching': 'TEACHING'
     };
@@ -76,10 +85,13 @@ const JobFeed = () => {
     return matchesSearch && matchesCategory;
   });
 
+  const uniqueJobs = Array.from(new Map(filteredJobs.map(job => [job.id, job])).values());
+  const isShowingExtraJobs = !searchTerm.trim() && selectedCategory === 'All Jobs';
+
   return (
     <div className="flex-1 overflow-y-auto bg-[#0B0F19] text-white p-8">
       
-      <div className="max-w-7xl mx-auto rounded-[32px] border border-white/10 bg-[#0B0F19]/95 p-8 shadow-2xl shadow-slate-950/40">
+      <div className="max-w-7xl mx-auto rounded-4xl border border-white/10 bg-[#0B0F19]/95 p-8 shadow-2xl shadow-slate-950/40">
         {/* Header Area */}
         <div className="mb-8">
           <div className="flex items-center gap-2 text-green-400 text-xs font-bold tracking-widest uppercase mb-3">
@@ -148,6 +160,12 @@ const JobFeed = () => {
             Tech
           </button>
           <button 
+            onClick={() => setSelectedCategory('IT')}
+            className={`px-6 py-2 rounded-full font-medium text-sm transition ${selectedCategory === 'IT' ? 'bg-green-500 text-black' : 'bg-[#1F2937] text-slate-300 hover:bg-[#374151] border border-transparent hover:border-slate-600'}`}
+          >
+            IT
+          </button>
+          <button 
             onClick={() => setSelectedCategory('Maintenance')}
             className={`px-6 py-2 rounded-full font-medium text-sm transition ${selectedCategory === 'Maintenance' ? 'bg-green-500 text-black' : 'bg-[#1F2937] text-slate-300 hover:bg-[#374151] border border-transparent hover:border-slate-600'}`}
           >
@@ -193,8 +211,27 @@ const JobFeed = () => {
         </div>
 
         {/* Masonry / Grid */}
+        <div className="mb-6">
+          {isShowingExtraJobs ? (
+            <div className="rounded-3xl border border-white/10 bg-[#11131A] p-5 text-sm text-white/70">
+              <p className="font-semibold text-white mb-1">Explore extra jobs</p>
+              <p>Browse extra IT and technology opportunities alongside the full marketplace feed.</p>
+            </div>
+          ) : (
+            <div className="rounded-3xl border border-white/10 bg-[#11131A] p-5 text-sm text-white/70">
+              <p className="font-semibold text-white mb-1">
+                Showing {uniqueJobs.length} unique {uniqueJobs.length === 1 ? 'result' : 'results'}
+                {searchTerm.trim() ? ` for "${searchTerm.trim()}"` : ''}
+              </p>
+              {uniqueJobs.length === 0 && (
+                <p>No jobs matched your search. Try another keyword or clear the filter.</p>
+              )}
+            </div>
+          )}
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-          {filteredJobs.map(job => (
+          {uniqueJobs.map(job => (
             <JobCard key={job.id} job={job} />
           ))}
         </div>
