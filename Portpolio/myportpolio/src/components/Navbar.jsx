@@ -1,8 +1,8 @@
 const navItems = [
   { label: 'HOME', href: '#home', active: true },
   { label: 'ABOUT', href: '#about' },
-  { label: 'SERVICES', href: '#services' },
-  { label: 'BLOG ▾', href: '#blog' },
+  { label: 'EXPERIENCE', href: '#experience' },
+  { label: 'PROJECTS', href: '#projects' },
   { label: 'CONTACT', href: '#contact' },
 ];
 
@@ -11,7 +11,7 @@ export default function Navbar() {
     <header className="site-navbar">
       <div className="brand-block">
         <a className="brand-logo" href="#home">
-          Freaky<span className="brand-dot">.</span>
+          Kavi<span className="brand-dot">Dev</span>
         </a>
       </div>
 

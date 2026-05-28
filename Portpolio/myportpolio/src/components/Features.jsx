@@ -1,18 +1,18 @@
 const featureItems = [
   {
-    icon: '✦',
-    title: 'Modern Design',
-    description: 'Editorial compositions, tactile depth, and high-contrast systems built for premium brands.',
+    icon: '⚡',
+    title: 'Front-End Development',
+    description: 'Building fast, polished React interfaces with responsive layouts, smooth interactions, and modern UI patterns.',
   },
   {
-    icon: '◌',
-    title: 'User Experience',
-    description: 'Thoughtful navigation, responsive structure, and polished interactions that keep people engaged.',
+    icon: '🧩',
+    title: 'Full-Stack Features',
+    description: 'Creating practical application workflows with API integration, authentication, and data handling across the stack.',
   },
   {
-    icon: '↗',
-    title: 'Powerful Editor',
-    description: 'Flexible front-end execution with clean code and bold creative direction from concept to launch.',
+    icon: '☁️',
+    title: 'Deployment & Optimization',
+    description: 'Preparing projects for hosting and improving performance, structure, and maintainability for real users.',
   },
 ];
 
@@ -20,8 +20,8 @@ export default function Features() {
   return (
     <section className="features-section" id="services">
       <div className="section-header narrow">
-        <p className="section-label">Selected Services</p>
-        <h2 className="section-heading">Crafting standout storytelling with purpose.</h2>
+        <p className="section-label">Services</p>
+        <h2 className="section-heading">A practical toolkit for modern web development.</h2>
       </div>
 
       <div className="feature-grid">

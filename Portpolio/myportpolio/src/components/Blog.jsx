@@ -1,21 +1,21 @@
 const posts = [
   {
-    category: 'Magazine',
-    title: 'Building brand-first websites with rich editorial layers',
+    category: 'Project Notes',
+    title: 'How I structure responsive React interfaces for real users',
     date: 'May 16, 2026',
-    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80',
+    image: 'linear-gradient(160deg, rgba(14, 20, 27, 0.95), rgba(44, 90, 130, 0.88))',
   },
   {
-    category: 'Culture',
-    title: 'Why dark interfaces still win in premium storytelling',
+    category: 'Learning',
+    title: 'Practical MERN patterns for authentication, routing, and API handling',
     date: 'May 12, 2026',
-    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80',
+    image: 'linear-gradient(160deg, rgba(16, 14, 22, 0.95), rgba(92, 52, 76, 0.88))',
   },
   {
-    category: 'Strategy',
-    title: 'Design systems that guide creative teams with clarity',
+    category: 'Career',
+    title: 'Building confidence as a fresher through small project launches',
     date: 'May 08, 2026',
-    image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80',
+    image: 'linear-gradient(160deg, rgba(11, 18, 19, 0.95), rgba(54, 112, 106, 0.88))',
   },
 ];
 
@@ -24,8 +24,8 @@ export default function Blog() {
     <section className="blog-section" id="blog">
       <div className="section-header">
         <div>
-          <p className="section-label">Latest Thoughts</p>
-          <h2 className="section-heading">Blogs & News.</h2>
+          <p className="section-label">Learning & Notes</p>
+          <h2 className="section-heading">Insights from building and growing.</h2>
         </div>
       </div>
 
@@ -34,7 +34,7 @@ export default function Blog() {
           <article className="blog-card" key={post.title}>
             <div
               className="blog-image"
-              style={{ backgroundImage: `url(${post.image})` }}
+              style={{ backgroundImage: post.image }}
               aria-hidden="true"
             />
             <div className="blog-copy">

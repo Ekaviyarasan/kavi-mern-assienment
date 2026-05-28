@@ -7,13 +7,14 @@ import Skills from './components/Skills.jsx';
 import Projects from './components/Projects.jsx';
 import Blog from './components/Blog.jsx';
 import Testimonial from './components/Testimonial.jsx';
+import Experience from './components/Experience.jsx';
 import CTA from './components/CTA.jsx';
 import Footer from './components/Footer.jsx';
 import './App.css';
 
 export default function App() {
   useEffect(() => {
-    document.title = 'Freaky';
+    document.title = 'Kaviyarasan | MERN Stack Developer';
   }, []);
 
   return (
@@ -25,6 +26,7 @@ export default function App() {
         <About />
         <Features />
         <Skills />
+        <Experience />
         <Projects />
         <Blog />
         <Testimonial />

@@ -1,11 +1,13 @@
+import profilePhoto from '../assets/profile.jpg';
+
 export default function Testimonial() {
   return (
     <section className="testimonial-section">
       <div className="testimonial-card">
         <div className="author-photo-block">
           <img
-            src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80"
-            alt="Antonio Morena"
+            src={profilePhoto}
+            alt="Portrait of Kaviyarasan"
             className="author-photo"
           />
         </div>
@@ -13,18 +15,18 @@ export default function Testimonial() {
         <div className="testimonial-copy">
           <p className="quote-mark">“</p>
           <p className="testimonial-quote">
-            Freaky brought a confident editorial energy to our launch. Every interaction felt intentional, premium, and deeply aligned with our brand voice.
+            Kaviyarasan shows strong curiosity, fast learning, and a genuine enthusiasm for full-stack development. His project mindset and consistency make him a dependable fresher to grow with.
           </p>
           <div className="testimonial-meta">
             <div>
-              <p className="author-name">Antonio Morena</p>
-              <p className="author-role">Creative Director</p>
+              <p className="author-name">Self-driven developer</p>
+              <p className="author-role">Mentor & Project Growth Perspective</p>
             </div>
 
             <div className="testimonial-controls" aria-label="Testimonial navigation">
-              <button className="control-dot active" type="button" aria-label="Previous" />
-              <button className="control-dot" type="button" aria-label="Next" />
-              <button className="control-dot" type="button" aria-label="Next" />
+              <button className="control-dot active" type="button" aria-label="Growth focus" />
+              <button className="control-dot" type="button" aria-label="Collaboration" />
+              <button className="control-dot" type="button" aria-label="Execution" />
             </div>
           </div>
         </div>
