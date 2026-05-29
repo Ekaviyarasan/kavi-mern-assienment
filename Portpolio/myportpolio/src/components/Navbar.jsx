@@ -11,7 +11,7 @@ export default function Navbar() {
     <header className="site-navbar">
       <div className="brand-block">
         <a className="brand-logo" href="#home">
-          Kavi<span className="brand-dot">Dev</span>
+          Kavi<span className="brand-dot">Developper</span>
         </a>
       </div>
 
