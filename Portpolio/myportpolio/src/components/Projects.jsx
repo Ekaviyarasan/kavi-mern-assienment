@@ -6,8 +6,8 @@ const projectData = [
     category: 'Full-Stack, MERN, JWT, Tailwind CSS',
     image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80',
     description:
-      'Built a SaaS job platform for 100+ users with JWT authentication and role-based access control for employers and candidates. Reduced API response times by 25% through optimized MongoDB queries and indexing. Deployed on Vercel and Render.',
-    link: 'https://github.com/kaviyarasan7778/SkillMatch',
+      'Built a SaaS job platform for 100+ users with JWT authentication and role-based access control for employers and candidates. Reduced API response times by 25% through optimized MongoDB queries and indexing. Deployed on Vercel and Render.\n\nNote: This project is not available online currently.',
+    link: '', // No link since the repo is missing
   },
   {
     title: 'E-Commerce Web Application',
@@ -31,11 +31,14 @@ const filters = ['All', 'Photography', 'Web Design', 'Creative'];
 
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState('All');
+  const [selectedProject, setSelectedProject] = useState(projectData[0]);
 
   const visibleProjects = useMemo(() => {
     if (activeFilter === 'All') return projectData;
     return projectData.filter((item) => item.category === activeFilter);
   }, [activeFilter]);
+
+  const activeProject = visibleProjects.find((project) => project.title === selectedProject.title) ?? visibleProjects[0];
 
   return (
     <section className="projects-section" id="projects">
@@ -43,6 +46,9 @@ export default function Projects() {
         <div>
           <p className="section-label">Selected Work</p>
           <h2 className="section-heading">Stunning Projects.</h2>
+          <p className="projects-guide-text">
+            Here are my 3 featured projects for you to explore.
+          </p>
         </div>
 
         <div className="filter-tabs" aria-label="Project filter">
@@ -61,12 +67,14 @@ export default function Projects() {
 
       <div className="project-grid">
         {visibleProjects.map((project) => (
-          <article className="project-card" key={project.title}>
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ textDecoration: 'none', color: 'inherit' }}
+          <article
+            className={`project-card${selectedProject.title === project.title ? ' selected' : ''}`}
+            key={project.title}
+          >
+            <button
+              type="button"
+              className="project-card-trigger"
+              onClick={() => setSelectedProject(project)}
             >
               <div
                 className="project-image"
@@ -84,10 +92,32 @@ export default function Projects() {
               <div className="project-description">
                 {project.description}
               </div>
-            </a>
+            </button>
+            <div className="project-card-actions">
+              {project.link ? (
+                <a
+                  className="project-link"
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Open Project
+                </a>
+              ) : (
+                <span className="project-link disabled">Not available online</span>
+              )}
+            </div>
           </article>
         ))}
       </div>
+
+      <aside className="project-detail-panel" aria-live="polite">
+        <p className="section-label">Selected Project</p>
+        <h3 className="project-detail-title">{activeProject.title}</h3>
+        <p className="project-detail-category">{activeProject.category}</p>
+        <p className="project-detail-description">{activeProject.description}</p>
+        <p className="project-detail-hint">Click any project card above to view its details one by one.</p>
+      </aside>
     </section>
   );
 }

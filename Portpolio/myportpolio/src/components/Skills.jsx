@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 
 const skillBars = [
+  { label: 'JavaScript', value: 88 },
   { label: 'React.js', value: 90 },
   { label: 'Node.js', value: 85 },
+  { label: 'HTML5', value: 88 },
+  { label: 'CSS3', value: 86 },
   { label: 'MongoDB', value: 80 },
-  { label: 'HTML5 & CSS3', value: 85 },
   { label: 'JWT Authentication', value: 80 },
 ];
 

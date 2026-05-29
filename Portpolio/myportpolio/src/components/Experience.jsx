@@ -1,7 +1,7 @@
 const milestones = [
   {
-    period: '2024 - Present',
-    title: 'BCA / Computer Applications',
+    period: '2022-2025 - Present',
+    title: 'BE / Computer Science ',
     company: 'Academic Focus',
     description: 'Building strong foundations in programming, databases, web development, and system design while developing practical projects and problem-solving skills.',
   },

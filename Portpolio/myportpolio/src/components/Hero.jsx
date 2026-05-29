@@ -25,8 +25,12 @@ export default function Hero() {
 
           <div className="hero-actions">
             <a className="hero-cta primary" href="/resume.pdf" download>Download Resume</a>
-            <a className="hero-cta secondary" href="#projects">View Projects</a>
+            <a className="hero-cta secondary" href="#projects">View my 3 projects</a>
           </div>
+
+          <p className="hero-guide-text">
+            Check the Contact section to view my details, then explore my three featured projects below.
+          </p>
         </div>
 
         <div className="hero-visual-block">

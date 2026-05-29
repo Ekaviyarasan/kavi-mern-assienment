@@ -6,7 +6,7 @@ const footerLinks = [
 const socials = [
   { label: 'in', url: 'https://linkedin.com/' },
   { label: 'gh', url: 'https://github.com/' },
-  { label: 'mail', url: 'mailto:kaviyarasan@email.com' },
+  { label: 'mail', url: 'mailto:kaviyarasan7778@email.com' },
 ];
 
 export default function Footer() {
