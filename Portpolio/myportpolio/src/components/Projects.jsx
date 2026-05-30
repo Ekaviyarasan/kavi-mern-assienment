@@ -2,12 +2,12 @@ import { useMemo, useState } from 'react';
 
 const projectData = [
   {
-    title: 'SkillMatch - Job Platform',
+    title: 'Jobzenix - Job Platform',
     category: 'Full-Stack, MERN, JWT, Tailwind CSS',
     image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80',
     description:
       'Built a SaaS job platform for 100+ users with JWT authentication and role-based access control for employers and candidates. Reduced API response times by 25% through optimized MongoDB queries and indexing. Deployed on Vercel and Render.\n\nNote: This project is not available online currently.',
-    link: 'https://github.com/Ekaviyarasan/kavi-mern-assienment', // No link since the repo is missing
+    link: 'https://jobzenix-atqezp7w1-ekaviyarasans-projects.vercel.app/', // No link since the repo is missing
   },
   {
     title: 'E-Commerce Web Application',
