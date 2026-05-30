@@ -9,7 +9,7 @@ export default function Hero() {
       <div className="hero-content hero-panel">
         <div className="hero-copy-block">
           <p className="eyebrow-text">FRESHER PORTFOLIO</p>
-          <h1 className="hero-title">Kaviyarasan</h1>
+          <h1 className="hero-title">Kaviyarasan.E</h1>
           <p className="hero-subtitle">
             Aspiring <span>MERN Stack Developer</span> focused on responsive design, backend logic, and polished product builds.
           </p>
