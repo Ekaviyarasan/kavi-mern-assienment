@@ -1,12 +1,12 @@
 const milestones = [
   {
-    period: '2022-2025 - Present',
+    period: '2022-2025 ',
     title: 'BE / Computer Science ',
     company: 'Academic Focus',
     description: 'Building strong foundations in programming, databases, web development, and system design while developing practical projects and problem-solving skills.',
   },
   {
-    period: '2025',
+    period: '2025-2026',
     title: 'MERN Stack Practice',
     company: 'Hands-on Development',
     description: 'Designed responsive web apps with React, Node.js, Express.js, and MongoDB, covering authentication, REST APIs, and deployment workflows.',

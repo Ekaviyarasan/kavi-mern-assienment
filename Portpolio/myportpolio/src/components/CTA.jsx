@@ -22,10 +22,10 @@ export default function CTA() {
           className="cta-button primary"
           onClick={() => setShowDetails((value) => !value)}
         >
-          {showDetails ? 'Hide Details' : 'View Contact Details'}
+          {showDetails ? 'Hide Details' : ' Contact Me'}
         </button>
         <a className="cta-button secondary" href="/resume.pdf" download>Download Resume</a>
-        <a className="cta-button secondary" href="mailto:kaviyarasan@email.com">Contact Me</a>
+        
       </div>
 
       {showDetails && (

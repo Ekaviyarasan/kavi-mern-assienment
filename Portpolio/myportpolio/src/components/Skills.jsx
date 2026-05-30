@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 
 const skillBars = [
-  { label: 'JavaScript', value: 88 },
-  { label: 'React.js', value: 90 },
-  { label: 'Node.js', value: 85 },
-  { label: 'HTML5', value: 88 },
-  { label: 'CSS3', value: 86 },
-  { label: 'MongoDB', value: 80 },
-  { label: 'JWT Authentication', value: 80 },
+  { label: 'JavaScript', value: 95 },
+  { label: 'React.js', value: 98 },
+  { label: 'Node.js', value: 90 },
+  { label: 'HTML5', value: 95 },
+  { label: 'CSS3', value: 92 },
+  { label: 'MongoDB', value: 98 },
+  { label: 'JWT Authentication', value: 90 },
 ];
 
 export default function Skills() {

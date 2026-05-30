@@ -15,11 +15,11 @@ const projectData = [
     image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80',
     description:
       'Developed a complete e-commerce platform with product browsing, shopping cart, and checkout functionality. Ensured 100% mobile responsiveness and scalable design using Tailwind CSS. Structured MongoDB collections for products, users, and orders.',
-    link: 'https://github.com/Ekaviyarasan/kavi-mern-assienment',
+    link: 'https://ecommers-git-main-ekaviyarasans-projects.vercel.app/',
   },
   {
-    title: 'SmartPlant - IoT Dashboard',
-    category: 'Full-Stack, IoT, MERN',
+    title: 'SmartPilot',
+    category: 'Full-Stack,  MERN',
     image: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80',
     description:
       'Created a dashboard for monitoring plant health via sensors. Built React components and responsive charts, integrated with Node.js/Express backend and MongoDB for data management. Authenticated dashboard with JWT and GitHub OAuth.',
@@ -27,7 +27,7 @@ const projectData = [
   },
 ];
 
-const filters = ['All', 'Photography', 'Web Design', 'Creative'];
+
 
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -51,18 +51,7 @@ export default function Projects() {
           </p>
         </div>
 
-        <div className="filter-tabs" aria-label="Project filter">
-          {filters.map((filter) => (
-            <button
-              key={filter}
-              type="button"
-              className={`filter-tab${filter === activeFilter ? ' active' : ''}`}
-              onClick={() => setActiveFilter(filter)}
-            >
-              {filter}
-            </button>
-          ))}
-        </div>
+        
       </div>
 
       <div className="project-grid">
