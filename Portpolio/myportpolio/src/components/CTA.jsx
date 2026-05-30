@@ -43,7 +43,7 @@ export default function CTA() {
             <p className="cta-detail-copy"><strong>Email:</strong> kaviyarasan@email.com</p>
             <p className="cta-detail-copy"><strong>Phone:</strong> 6385538234</p>
             <p className="cta-detail-copy"><strong>Availability:</strong> Internships, freelance, entry-level full-stack roles</p>
-            <p className="cta-detail-copy"><strong>Focus:</strong> React, Node.js, MongoDB, Express, JWT, responsive UI</p>
+            <p className="cta-detail-copy"><strong>Focus:</strong> Html,Css,JavaScript,React, Node.js, MongoDB, Express, JWT, responsive UI</p>
           </div>
 
           <div className="cta-detail-card">

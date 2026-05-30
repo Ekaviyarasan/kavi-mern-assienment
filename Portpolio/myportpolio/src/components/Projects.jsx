@@ -7,7 +7,7 @@ const projectData = [
     image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80',
     description:
       'Built a SaaS job platform for 100+ users with JWT authentication and role-based access control for employers and candidates. Reduced API response times by 25% through optimized MongoDB queries and indexing. Deployed on Vercel and Render.\n\nNote: This project is not available online currently.',
-    link: '', // No link since the repo is missing
+    link: 'https://github.com/Ekaviyarasan/kavi-mern-assienment', // No link since the repo is missing
   },
   {
     title: 'E-Commerce Web Application',
@@ -15,7 +15,7 @@ const projectData = [
     image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80',
     description:
       'Developed a complete e-commerce platform with product browsing, shopping cart, and checkout functionality. Ensured 100% mobile responsiveness and scalable design using Tailwind CSS. Structured MongoDB collections for products, users, and orders.',
-    link: 'https://github.com/kaviyarasan7778/ECommerceApp',
+    link: 'https://github.com/Ekaviyarasan/kavi-mern-assienment',
   },
   {
     title: 'SmartPlant - IoT Dashboard',
@@ -23,7 +23,7 @@ const projectData = [
     image: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80',
     description:
       'Created a dashboard for monitoring plant health via sensors. Built React components and responsive charts, integrated with Node.js/Express backend and MongoDB for data management. Authenticated dashboard with JWT and GitHub OAuth.',
-    link: 'https://github.com/kaviyarasan7778/SmartPlant',
+    link: 'https://github.com/Ekaviyarasan/kavi-mern-assienment',
   },
 ];
 

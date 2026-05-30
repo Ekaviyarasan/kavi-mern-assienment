@@ -4,8 +4,8 @@ const footerLinks = [
   { label: 'Contact', href: '#contact' },
 ];
 const socials = [
-  { label: 'in', url: 'https://linkedin.com/' },
-  { label: 'gh', url: 'https://github.com/' },
+  { label: 'in', url: 'www.linkedin.com/in/kavi-arasan-73680827b' },
+  { label: 'gh', url: 'https://github.com/Ekaviyarasan/kavi-mern-assienment' },
   { label: 'mail', url: 'mailto:kaviyarasan7778@email.com' },
 ];
 
