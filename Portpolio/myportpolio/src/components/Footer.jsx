@@ -14,7 +14,7 @@ const socials = [
 export default function Footer() {
   return (
     <footer className="site-footer">
-      <p className="footer-copy">© 2026 Kaviyarasan | MERN Stack Learner</p>
+      <p className="footer-copy">© 2026 Kaviyarasan | MERN Stack Developper</p>
 
       <div className="footer-links">
         {footerLinks.map((item) => (

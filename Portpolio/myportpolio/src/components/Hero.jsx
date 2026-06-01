@@ -17,20 +17,31 @@ export default function Hero() {
             I’m an enthusiastic developer with foundational MERN skills, a strong learning curve, and a practical mindset for turning ideas into working web applications.
           </p>
 
-          <div className="hero-stats" aria-label="Portfolio highlights">
-            <div className="stat-pill"><strong>10+</strong><span>Practice Projects</span></div>
-            <div className="stat-pill"><strong>React</strong><span>Frontend</span></div>
-            <div className="stat-pill"><strong>Node</strong><span>Backend</span></div>
+          <div className="hero-strengths" style={{ marginTop: '24px', padding: '16px', background: 'rgba(255, 255, 255, 0.03)', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.05)' }}>
+            <p className="summary-label" style={{ fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#22d3ee', margin: '0 0 10px 0' }}>Professional Highlights</p>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              <li style={{ fontSize: '0.875rem', color: '#e2e8f0', display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
+                <span style={{ color: '#22d3ee', fontWeight: 'bold' }}>✓</span>
+                <span><strong>MERN Stack:</strong> Strong foundation in React, Node.js, Express, and MongoDB.</span>
+              </li>
+              <li style={{ fontSize: '0.875rem', color: '#e2e8f0', display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
+                <span style={{ color: '#22d3ee', fontWeight: 'bold' }}>✓</span>
+                <span><strong>Web Development:</strong> Dedicated to building responsive, clean, and accessible websites</span>
+              </li>
+              <li style={{ fontSize: '0.875rem', color: '#e2e8f0', display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
+                <span style={{ color: '#22d3ee', fontWeight: 'bold' }}>✓</span>
+                <span><strong>Productive Mindset:</strong> Eager to learn, collaborate, and build practical real-world features.</span>
+              </li>
+              <li style={{ fontSize: '0.875rem', color: '#e2e8f0', display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
+                <span style={{ color: '#22d3ee', fontWeight: 'bold' }}>✓</span>
+                <span><strong>Featured Projects:</strong> Created <a href="#projects" style={{ color: '#22d3ee', textDecoration: 'none' }}>Jobzenix - Job Platform</a>, <a href="#projects" style={{ color: '#22d3ee', textDecoration: 'none' }}>E-Commerce Web Application</a>, and <a href="#projects" style={{ color: '#22d3ee', textDecoration: 'none' }}>SmartPilot</a>.</span>
+              </li>
+            </ul>
           </div>
 
-          <div className="hero-actions">
+          <div className="hero-actions" style={{ marginTop: '24px' }}>
             <a className="hero-cta primary" href="/resume.pdf" download>Download Resume</a>
-            <a className="hero-cta secondary" href="#projects">View my 3 projects</a>
           </div>
-
-          <p className="hero-guide-text">
-            Check the Contact section to view my details, then explore my three featured projects below.
-          </p>
         </div>
 
         <div className="hero-visual-block">

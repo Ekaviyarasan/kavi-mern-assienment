@@ -3,11 +3,19 @@ import { useMemo, useState } from 'react';
 const projectData = [
   {
     title: 'Jobzenix - Job Platform',
-    category: 'Full-Stack, MERN, JWT, Tailwind CSS',
+    category: ' Mern Full-Stack, ',
     image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80',
-    description:
-      'Built a SaaS job platform for 100+ users with JWT authentication and role-based access control for employers and candidates. Reduced API response times by 25% through optimized MongoDB queries and indexing. Deployed on Vercel and Render.\n\nNote: This project is not available online currently.',
+    description:'Designed and developed a full-stack Job Search Platform using the MERN stack to connect job seekers and recruiters. Implemented secure user authentication, job posting and application management,  advanced job search functionality. Created separate dashboards for job seekers and recruiters to manage profiles, applications, and job listings efficiently. Integrated RESTful APIs for seamless data communication and MongoDB for scalable data storage. Developed a responsive and user-friendly interface using React.js to ensure an optimal experience across devices'
+    ,
     link: 'https://jobzenix-atqezp7w1-ekaviyarasans-projects.vercel.app/', // No link since the repo is missing
+    concepts: [
+      'Role-based Dashboards (Employers post jobs, Candidates apply)',
+      'Optimized MongoDB Indexing (25% faster query responses)',
+      'Secure Session Management using JWT & HttpOnly cookies',
+      'Job Search with Filters (Location, Salary, Experience, Skills)',
+      'Apply for Jobs Online',
+      'Save/Favorite Jobs',
+    ]
   },
   {
     title: 'E-Commerce Web Application',
@@ -16,14 +24,29 @@ const projectData = [
     description:
       'Developed a complete e-commerce platform with product browsing, shopping cart, and checkout functionality. Ensured 100% mobile responsiveness and scalable design using Tailwind CSS. Structured MongoDB collections for products, users, and orders.',
     link: 'https://ecommers-git-main-ekaviyarasans-projects.vercel.app/',
+    concepts: [
+      'Interactive Product Catalog with categories and filters',
+      'Dynamic Shopping Cart state management and local persistence',
+      'Normalized MongoDB database schemas for Users, Products, and Orders',
+      'Wishlist Management',
+      'Secure Checkout Process'
+    ]
   },
   {
-    title: 'SmartPilot',
+    title: 'SmartScript',
     category: 'Full-Stack,  MERN',
     image: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80',
-    description:
-      'Created a dashboard for monitoring plant health via sensors. Built React components and responsive charts, integrated with Node.js/Express backend and MongoDB for data management. Authenticated dashboard with JWT and GitHub OAuth.',
+    description:"Developed a full-stack Team Management System to streamline employee and team operations within an organization. The application enables administrators to create teams, assign members, manage projects, track tasks, and monitor team performance through a centralized dashboard.",
     link: 'https://github.com/Ekaviyarasan/kavi-mern-assienment',
+    concepts: [
+      "User Authentication and Authorization (Admin, Manager, Employee)",
+      "Team Creation and Member Assignment",
+      "Project and Task Management",
+      "Task Status Tracking (Pending, In Progress, Completed)",
+      "Employee Performance Monitoring",
+      "Dashboard with Team Statistics",
+      "Responsive User Interface"
+    ]
   },
 ];
 
@@ -105,7 +128,22 @@ export default function Projects() {
         <h3 className="project-detail-title">{activeProject.title}</h3>
         <p className="project-detail-category">{activeProject.category}</p>
         <p className="project-detail-description">{activeProject.description}</p>
-        <p className="project-detail-hint">Click any project card above to view its details one by one.</p>
+        
+        {activeProject.concepts && (
+          <div className="project-concepts-list" style={{ marginTop: '16px', borderTop: '1px solid rgba(255, 255, 255, 0.1)', paddingTop: '16px' }}>
+            <p style={{ fontSize: '0.8rem', fontWeight: 600, color: '#22d3ee', letterSpacing: '0.05em', textTransform: 'uppercase', margin: '0 0 10px 0' }}>Core Concepts & Features</p>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              {activeProject.concepts.map((concept, index) => (
+                <li key={index} style={{ fontSize: '0.875rem', color: '#cbd5e1', display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
+                  <span style={{ color: '#22d3ee', fontWeight: 'bold' }}>⚡</span>
+                  <span>{concept}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        
+        <p className="project-detail-hint" style={{ marginTop: '16px', fontSize: '0.8rem', opacity: 0.7 }}>Click any project card above to view its details one by one.</p>
       </aside>
     </section>
   );
