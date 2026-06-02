@@ -1,4 +1,4 @@
-import { LayoutDashboard, Compass, Briefcase, MessageSquare, BarChart2, Plus, Settings, HelpCircle, User } from 'lucide-react';
+import { LayoutDashboard, Compass, Briefcase, MessageSquare, BarChart2, Plus, Settings, HelpCircle, User, FileText, CheckSquare } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const Sidebar = () => {
@@ -9,6 +9,7 @@ const Sidebar = () => {
   let currentView = location.pathname.replace('/', '') || 'dashboard';
   if (currentView === 'job-details') currentView = 'marketplace';
   if (currentView === 'applied-jobs' || currentView === 'candidates') currentView = 'candidates';
+  if (currentView === 'post-job') currentView = 'post-job';
 
   return (
     <div className="w-64 flex-shrink-0 bg-white/5 h-screen flex flex-col justify-between border-r border-white/10 px-4 py-6 text-white/70 backdrop-blur-sm">
@@ -50,6 +51,15 @@ const Sidebar = () => {
             <Briefcase size={20} />
             My Gigs
           </button>
+
+          <button 
+            onClick={() => navigate('/post-job')}
+            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors font-medium text-left ${currentView === 'post-job' ? 'bg-white/10 text-white relative' : 'hover:bg-white/5'}`}
+          >
+            {currentView === 'post-job' && <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-white rounded-r-md"></div>}
+            <Plus size={20} />
+            Post Job
+          </button>
           
           <button 
             onClick={() => navigate('/candidates')}
@@ -76,6 +86,24 @@ const Sidebar = () => {
             {currentView === 'profile' && <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-white rounded-r-md"></div>}
             <User size={20} />
             Profile
+          </button>
+
+          <button 
+            onClick={() => navigate('/resume')}
+            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors font-medium text-left ${currentView === 'resume' ? 'bg-white/10 text-white relative' : 'hover:bg-white/5'}`}
+          >
+            {currentView === 'resume' && <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-white rounded-r-md"></div>}
+            <FileText size={20} />
+            Resume
+          </button>
+
+          <button 
+            onClick={() => navigate('/application-tracker')}
+            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors font-medium text-left ${currentView === 'application-tracker' ? 'bg-white/10 text-white relative' : 'hover:bg-white/5'}`}
+          >
+            {currentView === 'application-tracker' && <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-white rounded-r-md"></div>}
+            <CheckSquare size={20} />
+            Applications
           </button>
           
           <button 

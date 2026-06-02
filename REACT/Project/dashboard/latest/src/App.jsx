@@ -12,6 +12,10 @@ import SearchHistory from './components/SearchHistory';
 import Auth from './components/Auth';
 import Company from './components/Company';
 import MyGigs from './components/MyGigs';
+import ResumeUpdate from './components/ResumeUpdate';
+import ApplicationTracker from './components/ApplicationTracker';
+import PostJob from './components/PostJob';
+import EnhancedLandingPage from './components/EnhancedLandingPage';
 import './App.css';
 
 function ApplicationLayout({ children }) {
@@ -34,7 +38,7 @@ function App() {
   return (
     <Routes>
       {/* Public Routes */}
-      <Route path="/" element={<LandingPage />} />
+      <Route path="/" element={<EnhancedLandingPage />} />
       <Route path="/auth" element={<Auth />} />
 
       {/* Internal App Routes wrapped in Layout */}
@@ -42,6 +46,9 @@ function App() {
       <Route path="/marketplace" element={<ApplicationLayout><JobFeed /></ApplicationLayout>} />
       <Route path="/job-details" element={<ApplicationLayout><JobDetails /></ApplicationLayout>} />
       <Route path="/applied-jobs" element={<ApplicationLayout><Candidates /></ApplicationLayout>} />
+      <Route path="/application-tracker" element={<ApplicationLayout><ApplicationTracker /></ApplicationLayout>} />
+      <Route path="/resume" element={<ApplicationLayout><ResumeUpdate /></ApplicationLayout>} />
+      <Route path="/post-job" element={<ApplicationLayout><PostJob /></ApplicationLayout>} />
       <Route path="/candidates" element={<ApplicationLayout><Candidates /></ApplicationLayout>} />
       <Route path="/my-gigs" element={<ApplicationLayout><MyGigs /></ApplicationLayout>} />
       <Route path="/search-history" element={<ApplicationLayout><SearchHistory /></ApplicationLayout>} />
