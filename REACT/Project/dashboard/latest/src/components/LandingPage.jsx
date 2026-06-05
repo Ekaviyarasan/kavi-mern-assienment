@@ -51,6 +51,10 @@ const LandingPage = () => {
               Marketplace
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-600 transition-all duration-300 group-hover:w-full"></span>
             </button>
+            <a href="#security" className="relative text-gray-500 hover:text-gray-700 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-gray-50 group">
+              Security
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-600 transition-all duration-300 group-hover:w-full"></span>
+            </a>
             <button onClick={() => navigate('/my-gigs')} className="relative text-gray-500 hover:text-gray-700 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-gray-50 group">
               My Gigs
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-600 transition-all duration-300 group-hover:w-full"></span>
@@ -92,10 +96,10 @@ const LandingPage = () => {
             </h1>
             
             <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed font-medium">
-               Connect with top companies across Tamil Nadu and Kerala. From startups in Chennai to corporations in Kochi, find opportunities that match your skills and aspirations.
+               Connect with top companies across Tamil Nadu and Kerala. From startups in Chennai to corporations in Kochi, discover extra IT jobs and professional roles with secure, verified hiring.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-24">
+            <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-8">
                <button onClick={() => navigate('/marketplace')} className="px-8 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold transition flex items-center justify-center gap-2 group shadow-[0_0_20px_rgba(16,185,129,0.3)] transform hover:scale-105">
                   Browse Jobs <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                </button>
@@ -103,6 +107,69 @@ const LandingPage = () => {
                   Post a Job
                </button>
             </div>
+
+            <div className="flex flex-wrap items-center justify-center gap-4 mb-16">
+               <span className="inline-flex items-center gap-2 rounded-full bg-white/90 px-4 py-2 text-sm font-semibold text-gray-900 shadow-sm">
+                  <Shield size={16} className="text-emerald-600" />
+                  Secure hiring & verified profiles
+               </span>
+               <span className="inline-flex items-center gap-2 rounded-full bg-white/90 px-4 py-2 text-sm font-semibold text-gray-900 shadow-sm">
+                  <User size={16} className="text-purple-600" />
+                  Job seeker, recruiter & employer workflows
+               </span>
+            </div>
+
+            <div className="grid gap-6 sm:grid-cols-3 mb-24">
+               <div className="rounded-3xl bg-white/90 p-8 shadow-xl border border-gray-200">
+                  <div className="mb-4 inline-flex items-center justify-center rounded-3xl bg-emerald-50 p-3 text-emerald-600">
+                     <Search size={20} />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-gray-900">Extra IT Opportunities</h3>
+                  <p className="text-gray-600">Access curated developer, IT support, and cybersecurity roles built for in-demand professionals.</p>
+               </div>
+               <div className="rounded-3xl bg-white/90 p-8 shadow-xl border border-gray-200">
+                  <div className="mb-4 inline-flex items-center justify-center rounded-3xl bg-purple-50 p-3 text-purple-600">
+                     <User size={20} />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-gray-900">Built for Different Users</h3>
+                  <p className="text-gray-600">Designed for candidates, employers, and recruitment teams with distinct tools for every role.</p>
+               </div>
+               <div className="rounded-3xl bg-white/90 p-8 shadow-xl border border-gray-200">
+                  <div className="mb-4 inline-flex items-center justify-center rounded-3xl bg-slate-100 p-3 text-emerald-600">
+                     <Shield size={20} />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-gray-900">Enterprise Security</h3>
+                  <p className="text-gray-600">Secure data protection, verified employer checks, and safe communication for every hiring interaction.</p>
+               </div>
+            </div>
+
+            <section className="max-w-6xl mx-auto mb-16 rounded-3xl bg-white/95 border border-gray-200 p-8 shadow-xl">
+               <div className="grid gap-8 lg:grid-cols-2 items-center">
+                  <div>
+                     <p className="text-sm uppercase tracking-[0.3em] text-emerald-600 font-bold mb-4">Choose your path</p>
+                     <h2 className="text-3xl font-black mb-4 text-gray-900">Professional search for candidates and trusted hiring for employers.</h2>
+                     <p className="text-gray-600 leading-relaxed mb-6">
+                        Pick the experience that fits you best: explore IT jobs, refine your resume, and apply with confidence, or post secure job listings and discover verified talent.
+                     </p>
+                     <div className="flex flex-col sm:flex-row gap-4">
+                        <button onClick={() => navigate('/marketplace')} className="rounded-full bg-emerald-500 px-8 py-4 text-white font-bold hover:bg-emerald-600 transition">I am a Candidate</button>
+                        <button onClick={() => navigate('/post-job')} className="rounded-full bg-slate-900 px-8 py-4 text-white font-bold hover:bg-slate-800 transition">I am an Employer</button>
+                     </div>
+                  </div>
+                  <div className="grid gap-4 sm:grid-cols-2">
+                     <div className="rounded-3xl border border-slate-200 p-6 bg-slate-50">
+                        <p className="text-sm uppercase tracking-[0.3em] text-slate-500 mb-3">Candidates</p>
+                        <h3 className="text-xl font-bold mb-3 text-gray-900">Modern job search</h3>
+                        <p className="text-gray-600">Find IT, tech and corporate roles with a secure application flow, real-time matching, and fast notifications.</p>
+                     </div>
+                     <div className="rounded-3xl border border-slate-200 p-6 bg-slate-50">
+                        <p className="text-sm uppercase tracking-[0.3em] text-slate-500 mb-3">Employers</p>
+                        <h3 className="text-xl font-bold mb-3 text-gray-900">Verified talent</h3>
+                        <p className="text-gray-600">Post jobs, screen candidates, and communicate safely with role-based access and security-first workflows.</p>
+                     </div>
+                  </div>
+               </div>
+            </section>
 
             {/* Hero Image */}
             <div className="mb-16">
@@ -244,13 +311,13 @@ const LandingPage = () => {
                   <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-6">
                      <Zap className="text-emerald-600" size={24} fill="currentColor" />
                   </div>
-                  <h3 className="text-3xl font-bold mb-4 tracking-tight text-gray-900">Real-time Matching</h3>
+                  <h3 className="text-3xl font-bold mb-4 tracking-tight text-gray-900">Real-time IT Matching</h3>
                   <p className="text-gray-600 font-medium leading-relaxed max-w-sm">
-                     Our kinetic engine connects you with vetted professionals within minutes, not hours. High precision, low friction.
+                     Our smart engine surfaces the latest IT, tech and professional roles in your region so you can apply quickly and confidently.
                   </p>
                   <div className="mt-auto flex gap-3">
-                     <span className="text-[10px] font-bold tracking-widest bg-green-100 text-green-700 px-3 py-1.5 rounded-full uppercase">Active Now</span>
-                     <span className="text-[10px] font-bold tracking-widest bg-emerald-100 text-emerald-700 px-3 py-1.5 rounded-full uppercase">Local Reach</span>
+                     <span className="text-[10px] font-bold tracking-widest bg-green-100 text-green-700 px-3 py-1.5 rounded-full uppercase">IT Focused</span>
+                     <span className="text-[10px] font-bold tracking-widest bg-emerald-100 text-emerald-700 px-3 py-1.5 rounded-full uppercase">Verified Talent</span>
                   </div>
                </div>
 
@@ -347,7 +414,48 @@ const LandingPage = () => {
             </div>
          </section>
 
-         {/* 5. CTA Area */}
+         {/* 5. Security Section */}
+         <section id="security" className="max-w-6xl mx-auto px-6 py-20 bg-slate-900 text-white rounded-3xl mb-32 shadow-2xl">
+            <div className="grid gap-10 lg:grid-cols-2 items-center">
+               <div>
+                  <p className="text-sm uppercase tracking-[0.3em] text-emerald-400 font-bold mb-4">Secure by design</p>
+                  <h2 className="text-4xl font-black mb-6">Your data and hiring workflows are protected end-to-end.</h2>
+                  <p className="text-slate-300 leading-relaxed text-lg mb-8">
+                     Jobzenix combines role-based access, verified company checks, and encrypted communications so employers and candidates can work confidently.
+                  </p>
+                  <div className="space-y-4 text-slate-300">
+                     <div className="flex items-start gap-3">
+                        <span className="mt-1 inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-emerald-500/10 text-emerald-400">✓</span>
+                        <div>
+                           <p className="font-semibold text-white">Verified employers & candidates</p>
+                           <p className="text-sm text-slate-400">Background checks, profile validation, and trusted hiring paths.</p>
+                        </div>
+                     </div>
+                     <div className="flex items-start gap-3">
+                        <span className="mt-1 inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-cyan-500/10 text-cyan-400">✓</span>
+                        <div>
+                           <p className="font-semibold text-white">Encrypted communications</p>
+                           <p className="text-sm text-slate-400">Secure chat between employers and talent with data privacy built in.</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div className="grid gap-6 sm:grid-cols-2">
+                  <div className="rounded-3xl bg-slate-950/70 border border-slate-800 p-8">
+                     <p className="text-sm uppercase tracking-[0.3em] text-slate-400 mb-4">For job seekers</p>
+                     <h3 className="text-2xl font-bold mb-3 text-white">Career-ready search</h3>
+                     <p className="text-slate-400">Find IT roles, developer positions, and professional gigs with a secure application flow.</p>
+                  </div>
+                  <div className="rounded-3xl bg-slate-950/70 border border-slate-800 p-8">
+                     <p className="text-sm uppercase tracking-[0.3em] text-slate-400 mb-4">For employers</p>
+                     <h3 className="text-2xl font-bold mb-3 text-white">Trusted hiring</h3>
+                     <p className="text-slate-400">Post jobs for multiple user types with verified candidate discovery and protected communication.</p>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         {/* 6. CTA Area */}
          <section className="max-w-4xl mx-auto px-6 text-center mb-32">
             <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-10 text-gray-900">
                Ready to start your Jobzenix journey?

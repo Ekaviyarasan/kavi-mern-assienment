@@ -188,5 +188,49 @@ export const jobsData = [
     icon: 'Monitor',
     iconBgC: 'bg-indigo-500/10',
     iconC: 'text-indigo-400'
+  },
+  {
+    id: 15,
+    type: 'details',
+    category: 'TECHNOLOGY',
+    title: 'Cloud Infrastructure Engineer',
+    status: '2 MINS AGO',
+    estimatedTime: '8 Hours',
+    location: 'Remote / Hyderabad',
+    rate: '₹2,800.00',
+    description: 'Design and maintain secure cloud environments, CI/CD pipelines, and DevOps workflows for enterprise clients.',
+    company: 'SkyNet Labs',
+    icon: 'Monitor',
+    iconBgC: 'bg-cyan-500/10',
+    iconC: 'text-cyan-400'
+  },
+  {
+    id: 16,
+    type: 'details',
+    category: 'TECHNOLOGY',
+    title: 'Cybersecurity Analyst',
+    status: '10 MINS AGO',
+    estimatedTime: '6 Hours',
+    location: 'Remote / Kochi',
+    rate: '₹3,200.00',
+    description: 'Monitor security alerts, assess vulnerabilities, and support incident response for local businesses.',
+    company: 'SecureWave',
+    icon: 'Monitor',
+    iconBgC: 'bg-slate-800/10',
+    iconC: 'text-slate-400'
+  },
+  {
+    id: 17,
+    type: 'user',
+    category: 'TECHNOLOGY',
+    title: 'UI/UX Designer for Enterprise Portal',
+    status: '30 MINS AGO',
+    budget: '₹12,500.00',
+    user: { name: 'Sahana P.', rating: 5 },
+    description: 'Craft interface designs for a secure enterprise hiring portal with modern usability standards.',
+    company: 'BrightUI',
+    icon: 'Monitor',
+    iconBgC: 'bg-purple-500/10',
+    iconC: 'text-purple-400'
   }
 ];

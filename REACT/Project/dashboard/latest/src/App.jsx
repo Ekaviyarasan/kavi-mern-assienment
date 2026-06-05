@@ -15,7 +15,6 @@ import MyGigs from './components/MyGigs';
 import ResumeUpdate from './components/ResumeUpdate';
 import ApplicationTracker from './components/ApplicationTracker';
 import PostJob from './components/PostJob';
-import EnhancedLandingPage from './components/EnhancedLandingPage';
 import './App.css';
 
 function ApplicationLayout({ children }) {
@@ -38,7 +37,7 @@ function App() {
   return (
     <Routes>
       {/* Public Routes */}
-      <Route path="/" element={<EnhancedLandingPage />} />
+      <Route path="/" element={<LandingPage />} />
       <Route path="/auth" element={<Auth />} />
 
       {/* Internal App Routes wrapped in Layout */}

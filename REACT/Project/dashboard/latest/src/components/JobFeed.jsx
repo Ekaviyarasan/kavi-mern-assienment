@@ -100,11 +100,11 @@ const JobFeed = () => {
           </div>
           
           <h1 className="text-4xl font-extrabold tracking-tight mb-2">
-            Discover New <span className="text-white">Jobs</span>
+            Discover New <span className="text-white">IT & Professional Jobs</span>
           </h1>
           
           <p className="text-white/60 text-lg max-w-2xl">
-            Jobzenix real-time opportunities across Tamil Nadu and Kerala. Curated for your skills and location.
+            Jobzenix real-time opportunities across Tamil Nadu and Kerala. Secure, verified roles for candidates and employers in technology and beyond.
           </p>
         </div>
 
@@ -113,7 +113,7 @@ const JobFeed = () => {
           <div className="flex flex-col sm:flex-row gap-3">
             <input
               type="text"
-              placeholder="Search jobs by title, company, or description..."
+              placeholder="Search IT jobs, company roles, or security-focused positions..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               onKeyDown={(e) => {
