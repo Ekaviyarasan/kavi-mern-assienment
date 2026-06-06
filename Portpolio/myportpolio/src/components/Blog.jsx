@@ -3,19 +3,19 @@ const posts = [
     category: 'Project Notes',
     title: 'How I structure responsive React interfaces for real users',
     date: 'May 16, 2026',
-    image: 'linear-gradient(160deg, rgba(14, 20, 27, 0.95), rgba(44, 90, 130, 0.88))',
+    image: 'url(https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800&q=80)',
   },
   {
     category: 'Learning',
     title: 'Practical MERN patterns for authentication, routing, and API handling',
     date: 'May 12, 2026',
-    image: 'linear-gradient(160deg, rgba(16, 14, 22, 0.95), rgba(92, 52, 76, 0.88))',
+    image: 'url(https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80)',
   },
   {
     category: 'Career',
     title: 'Building confidence as a fresher through small project launches',
     date: 'May 08, 2026',
-    image: 'linear-gradient(160deg, rgba(11, 18, 19, 0.95), rgba(54, 112, 106, 0.88))',
+    image: 'url(https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80)',
   },
 ];
 

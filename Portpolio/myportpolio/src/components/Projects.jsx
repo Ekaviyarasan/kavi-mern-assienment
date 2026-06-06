@@ -4,7 +4,7 @@ const projectData = [
   {
     title: 'Jobzenix - Job Platform',
     category: ' Mern Full-Stack, ',
-    image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80',
     description:'Designed and developed a full-stack Job Search Platform using the MERN stack to connect job seekers and recruiters. Implemented secure user authentication, job posting and application management,  advanced job search functionality. Created separate dashboards for job seekers and recruiters to manage profiles, applications, and job listings efficiently. Integrated RESTful APIs for seamless data communication and MongoDB for scalable data storage. Developed a responsive and user-friendly interface using React.js to ensure an optimal experience across devices'
     ,
     link: 'https://jobzenix-atqezp7w1-ekaviyarasans-projects.vercel.app/', // No link since the repo is missing
@@ -20,7 +20,7 @@ const projectData = [
   {
     title: 'E-Commerce Web Application',
     category: 'Full-Stack, React, MongoDB, Tailwind',
-    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80',
     description:
       'Developed a complete e-commerce platform with product browsing, shopping cart, and checkout functionality. Ensured 100% mobile responsiveness and scalable design using Tailwind CSS. Structured MongoDB collections for products, users, and orders.',
     link: 'https://ecommers-git-main-ekaviyarasans-projects.vercel.app/',
@@ -35,7 +35,7 @@ const projectData = [
   {
     title: 'SmartScript',
     category: 'Full-Stack,  MERN',
-    image: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80',
     description:"Developed a full-stack Team Management System to streamline employee and team operations within an organization. The application enables administrators to create teams, assign members, manage projects, track tasks, and monitor team performance through a centralized dashboard.",
     link: 'https://github.com/Ekaviyarasan/kavi-mern-assienment',
     concepts: [
