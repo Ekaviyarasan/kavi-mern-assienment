@@ -37,7 +37,7 @@ const projectData = [
     category: 'Full-Stack,  MERN',
     image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80',
     description:"Developed a full-stack Team Management System to streamline employee and team operations within an organization. The application enables administrators to create teams, assign members, manage projects, track tasks, and monitor team performance through a centralized dashboard.",
-    link: 'https://github.com/Ekaviyarasan/kavi-mern-assienment',
+    link: 'https://fullstack-project-duia.vercel.app/',
     concepts: [
       "User Authentication and Authorization (Admin, Manager, Employee)",
       "Team Creation and Member Assignment",
