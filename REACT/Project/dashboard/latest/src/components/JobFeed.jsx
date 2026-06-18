@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { jobsData } from '../data/jobsData';
+import { getJobs } from '../lib/api';
 import JobCard from './JobCard';
 
 const JobFeed = () => {
+  const [jobs, setJobs] = useState(jobsData);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All Jobs');
   const [searchStats, setSearchStats] = useState({
@@ -43,7 +45,7 @@ const JobFeed = () => {
     const term = searchTerm.trim();
     if (!term) return;
 
-    const results = jobsData.filter(job => {
+    const results = jobs.filter((job) => {
       const lowerTerm = term.toLowerCase();
       const categoryMatch = job.category?.toLowerCase().includes(lowerTerm);
       const techFallback = (lowerTerm.includes('it') || lowerTerm.includes('tech') || lowerTerm.includes('technology')) && job.category === 'TECHNOLOGY';
@@ -65,7 +67,27 @@ const JobFeed = () => {
     setSearchStats(buildSearchStats(history));
   }, []);
 
-  const filteredJobs = jobsData.filter(job => {
+  useEffect(() => {
+    let ignore = false;
+
+    const loadJobs = async () => {
+      try {
+        const data = await getJobs();
+        if (!ignore && Array.isArray(data) && data.length > 0) {
+          setJobs(data);
+        }
+      } catch (error) {
+        console.error('Unable to load jobs from server:', error);
+      }
+    };
+
+    loadJobs();
+    return () => {
+      ignore = true;
+    };
+  }, []);
+
+  const filteredJobs = jobs.filter((job) => {
     const lowerTerm = searchTerm.toLowerCase();
     const matchesSearch = !lowerTerm ||
       job.title.toLowerCase().includes(lowerTerm) ||
@@ -85,7 +107,7 @@ const JobFeed = () => {
     return matchesSearch && matchesCategory;
   });
 
-  const uniqueJobs = Array.from(new Map(filteredJobs.map(job => [job.id, job])).values());
+  const uniqueJobs = Array.from(new Map(filteredJobs.map((job) => [job.id, job])).values());
   const isShowingExtraJobs = !searchTerm.trim() && selectedCategory === 'All Jobs';
 
   return (
@@ -231,7 +253,7 @@ const JobFeed = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-          {uniqueJobs.map(job => (
+          {uniqueJobs.map((job) => (
             <JobCard key={job.id} job={job} />
           ))}
         </div>

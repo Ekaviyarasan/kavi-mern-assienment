@@ -1,22 +1,39 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ChevronRight, X } from 'lucide-react';
+import { deleteApplication, getApplications } from '../lib/api';
 
 const Candidates = () => {
   const navigate = useNavigate();
   const [candidates, setCandidates] = useState([]);
 
   useEffect(() => {
-    const stored = localStorage.getItem('appliedJobs');
-    if (stored) {
-      setCandidates(JSON.parse(stored));
-    }
-  }, []);
+    const storedUser = JSON.parse(localStorage.getItem('jobhub_user') || 'null');
 
-  const handleUnapply = (jobId) => {
-    const updated = candidates.filter((job) => job.id !== jobId);
-    setCandidates(updated);
-    localStorage.setItem('appliedJobs', JSON.stringify(updated));
+    if (!storedUser) {
+      navigate('/auth');
+      return;
+    }
+
+    const loadApplications = async () => {
+      try {
+        const data = await getApplications(storedUser.email);
+        setCandidates(data);
+      } catch (error) {
+        console.error('Unable to load applications:', error);
+      }
+    };
+
+    loadApplications();
+  }, [navigate]);
+
+  const handleUnapply = async (applicationId) => {
+    try {
+      await deleteApplication(applicationId);
+      setCandidates((prev) => prev.filter((job) => job.id !== applicationId));
+    } catch (error) {
+      console.error('Unable to remove application:', error);
+    }
   };
 
   return (

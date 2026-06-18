@@ -4,6 +4,7 @@ import {
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { createApplication } from '../lib/api';
 
 const iconsMap = {
   Package: Package,
@@ -28,25 +29,49 @@ const JobCard = ({ job, isApplied = false }) => {
     }
   }, [job.id, isApplied]);
 
-  const handleApply = () => {
-    const stored = localStorage.getItem('appliedJobs');
-    let appliedJobs = stored ? JSON.parse(stored) : [];
-    if (!appliedJobs.some(appliedJob => appliedJob.id === job.id)) {
-      const appliedJob = {
-        ...job,
-        appliedAt: new Date().toLocaleString(),
-        applicantName: 'You',
-        applicationStatus: 'Applied'
-      };
-      appliedJobs.push(appliedJob);
-      localStorage.setItem('appliedJobs', JSON.stringify(appliedJobs));
+  const handleApply = async () => {
+    const storedUser = JSON.parse(localStorage.getItem('jobhub_user') || 'null');
+
+    if (!storedUser) {
+      navigate('/auth');
+      return;
+    }
+
+    try {
+      const application = await createApplication({
+        jobId: job.id,
+        userEmail: storedUser.email,
+        applicantName: storedUser.fullName || storedUser.email,
+        title: job.title,
+        description: job.description || '',
+        budget: job.budget || job.rate || '',
+        location: job.location || '',
+        companyName: job.companyName || job.company || '',
+      });
+
+      const stored = localStorage.getItem('appliedJobs');
+      let appliedJobs = stored ? JSON.parse(stored) : [];
+
+      if (!appliedJobs.some((appliedJob) => appliedJob.id === job.id)) {
+        appliedJobs.push({
+          ...job,
+          appliedAt: application.appliedAt,
+          applicantName: application.applicantName,
+          applicationStatus: application.applicationStatus || 'Applied',
+          applicationId: application.id,
+        });
+        localStorage.setItem('appliedJobs', JSON.stringify(appliedJobs));
+      }
+
       setApplied(true);
+    } catch (error) {
+      console.error('Unable to apply to job:', error);
     }
   };
 
   return (
     <div 
-      onClick={() => navigate('/job-details')}
+      onClick={() => navigate('/job-details', { state: { job } })}
       className="bg-[#151923] border border-[#2A3143] rounded-2xl p-6 flex flex-col justify-between hover:border-[#3B4255] cursor-pointer transition-colors relative overflow-hidden group"
     >
       
