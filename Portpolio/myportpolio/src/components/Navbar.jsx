@@ -5,6 +5,13 @@ const navItems = [
   { label: 'CONTACT', href: '#contact' },
 ];
 
+const themeColors = [
+  { id: 'obsidian', color: '#2dd4bf', label: 'Obsidian' },
+  { id: 'cyberpunk', color: '#ff007f', label: 'Cyberpunk' },
+  { id: 'mint', color: '#10b981', label: 'Mint' },
+  { id: 'ocean', color: '#3b82f6', label: 'Ocean' }
+];
+
 export default function Navbar() {
   return (
     <header className="site-navbar">
