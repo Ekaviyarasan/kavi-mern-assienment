@@ -31,6 +31,12 @@ const applicationSchema = new mongoose.Schema({
     type: String,
     default: () => new Date().toISOString(),
   },
+  interviewMeetLink: String,
+  interviewDateTime: String,
+  interviewerName: String,
+  interviewerEmail: String,
+  hrName: String,
+  hrEmail: String,
 }, {
   timestamps: true,
 });

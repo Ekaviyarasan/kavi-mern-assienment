@@ -1,87 +1,72 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   Clock, CheckCircle2, AlertCircle, XCircle, Send, MessageSquare,
-  Calendar, MapPin, Briefcase, TrendingUp, Filter, Search
+  Calendar, MapPin, Briefcase, TrendingUp, Filter, Search, Video
 } from 'lucide-react';
+import { getApplications } from '../lib/api';
 
 const ApplicationTracker = () => {
+  const navigate = useNavigate();
   const [filterStatus, setFilterStatus] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
+  const [applications, setApplications] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const [applications, setApplications] = useState([
-    {
-      id: 1,
-      jobTitle: 'Senior React Developer',
-      company: 'Tech Corp',
-      status: 'interview',
-      appliedDate: '2024-05-20',
-      salary: '$120k - $150k',
-      location: 'San Francisco, CA',
-      logo: '🏢',
-      stage: 'phone-interview',
-      nextAction: 'Phone interview on June 5'
-    },
-    {
-      id: 2,
-      jobTitle: 'Full Stack Developer',
-      company: 'StartUp Inc',
-      status: 'applied',
-      appliedDate: '2024-05-22',
-      salary: '$100k - $130k',
-      location: 'Remote',
-      logo: '🚀',
-      stage: 'review',
-      nextAction: 'Awaiting HR response'
-    },
-    {
-      id: 3,
-      jobTitle: 'Node.js Backend Engineer',
-      company: 'Cloud Systems',
-      status: 'rejected',
-      appliedDate: '2024-05-15',
-      salary: '$110k - $140k',
-      location: 'New York, NY',
-      logo: '☁️',
-      stage: 'rejected',
-      nextAction: 'Application rejected'
-    },
-    {
-      id: 4,
-      jobTitle: 'DevOps Engineer',
-      company: 'Enterprise Solutions',
-      status: 'offered',
-      appliedDate: '2024-05-18',
-      salary: '$140k - $170k',
-      location: 'Boston, MA',
-      logo: '🛠️',
-      stage: 'offer',
-      nextAction: 'Offer received - Respond by June 10'
-    },
-    {
-      id: 5,
-      jobTitle: 'Frontend Developer',
-      company: 'Design Studios',
-      status: 'interview',
-      appliedDate: '2024-05-21',
-      salary: '$90k - $120k',
-      location: 'Los Angeles, CA',
-      logo: '🎨',
-      stage: 'technical-test',
-      nextAction: 'Complete coding test'
-    },
-    {
-      id: 6,
-      jobTitle: 'JavaScript Expert',
-      company: 'Web Innovations',
-      status: 'applied',
-      appliedDate: '2024-05-23',
-      salary: '$95k - $125k',
-      location: 'Chicago, IL',
-      logo: '⚙️',
-      stage: 'review',
-      nextAction: 'Under review'
-    }
-  ]);
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        const storedUser = JSON.parse(localStorage.getItem('jobhub_user') || 'null');
+        const email = storedUser ? storedUser.email : '';
+        const data = await getApplications(email);
+        
+        const mapped = (data || []).map(app => {
+          const isInterview = app.applicationStatus === 'Interview';
+          const isOffered = app.applicationStatus === 'Offered';
+          const isRejected = app.applicationStatus === 'Rejected';
+          
+          let status = 'applied';
+          if (isInterview) status = 'interview';
+          if (isOffered) status = 'offered';
+          if (isRejected) status = 'rejected';
+
+          let nextAction = 'Under review';
+          if (isInterview) {
+            nextAction = `F2F Google Meet on ${new Date(app.interviewDateTime).toLocaleString()}`;
+          } else if (isOffered) {
+            nextAction = 'Offer received - Respond by June 30';
+          } else if (isRejected) {
+            nextAction = 'Application rejected';
+          } else {
+            nextAction = 'Awaiting HR response';
+          }
+
+          return {
+            id: app.id,
+            jobTitle: app.title || 'Job Role',
+            company: app.companyName || 'Hiring Company',
+            status: status,
+            appliedDate: app.appliedAt || new Date().toISOString(),
+            salary: app.budget || '₹10k - ₹15k',
+            location: app.location || 'Remote',
+            logo: '🏢',
+            stage: isInterview ? 'face-to-face' : 'review',
+            nextAction: nextAction,
+            interviewMeetLink: app.interviewMeetLink,
+            interviewDateTime: app.interviewDateTime,
+            interviewerName: app.interviewerName
+          };
+        });
+        
+        setApplications(mapped);
+      } catch (err) {
+        console.error('Failed to load tracker applications:', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadData();
+  }, []);
 
   const getStatusColor = (status) => {
     switch (status) {
@@ -266,6 +251,14 @@ const ApplicationTracker = () => {
 
                   {/* Actions */}
                   <div className="flex flex-col gap-2 justify-start">
+                    {app.status === 'interview' && app.interviewMeetLink && (
+                      <button
+                        onClick={() => navigate('/interviews')}
+                        className="px-6 py-2 bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-400 hover:to-green-500 text-white rounded-lg font-semibold text-sm flex items-center justify-center gap-2 transition text-center shadow-[0_2px_10px_rgba(16,185,129,0.2)] cursor-pointer"
+                      >
+                        <Video size={16} /> Join Meet
+                      </button>
+                    )}
                     <button className="px-6 py-2 bg-[#818CF8] hover:bg-[#6366F1] rounded-lg font-semibold text-sm transition">
                       View Details
                     </button>

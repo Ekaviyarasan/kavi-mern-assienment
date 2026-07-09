@@ -29,6 +29,10 @@ connectDB().then(() => {
 
 // Seeding logic to migrate initial JSON data to MongoDB
 const seedDatabase = async () => {
+  if (global.isLocalFallback) {
+    console.log('Local JSON DB fallback is active, skipping seed migration.');
+    return;
+  }
   try {
     if (fs.existsSync(dbPath)) {
       console.log('Found local db.json, checking for data migration...');

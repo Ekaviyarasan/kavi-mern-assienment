@@ -50,9 +50,13 @@ export const createApplication = async (req, res) => {
 // @route   PUT /api/applications/:id
 // @access  Public
 export const updateApplication = async (req, res) => {
+  const query = req.params.id.match(/^[0-9a-fA-F]{24}$/)
+    ? { $or: [{ id: req.params.id }, { _id: req.params.id }] }
+    : { id: req.params.id };
+
   try {
     const updatedApplication = await Application.findOneAndUpdate(
-      { id: req.params.id },
+      query,
       { $set: req.body },
       { new: true }
     );
@@ -71,8 +75,12 @@ export const updateApplication = async (req, res) => {
 // @route   DELETE /api/applications/:id
 // @access  Public
 export const deleteApplication = async (req, res) => {
+  const query = req.params.id.match(/^[0-9a-fA-F]{24}$/)
+    ? { $or: [{ id: req.params.id }, { _id: req.params.id }] }
+    : { id: req.params.id };
+
   try {
-    const result = await Application.findOneAndDelete({ id: req.params.id });
+    const result = await Application.findOneAndDelete(query);
 
     if (!result) {
       return res.status(404).json({ message: 'Application not found.' });
@@ -83,3 +91,4 @@ export const deleteApplication = async (req, res) => {
     return res.status(500).json({ message: 'Server error removing application.', error: error.message });
   }
 };
+

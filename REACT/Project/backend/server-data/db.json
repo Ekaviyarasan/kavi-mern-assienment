@@ -1,5 +1,14 @@
 {
-  "users": [],
+  "users": [
+    {
+      "id": "user-1783583087446",
+      "fullName": "kavi",
+      "email": "arasan777@gmail.com",
+      "password": "$2a$10$I64X8EoT1te0w.APE2T2CehRWQCQlgch6tEeiK/uvapl5f5kluiLC",
+      "createdAt": "2026-07-09T07:44:47.801Z",
+      "updatedAt": "2026-07-09T07:44:47.802Z"
+    }
+  ],
   "jobs": [
     {
       "id": "job-1",
@@ -35,7 +44,11 @@
       "status": "5 MINS AGO",
       "description": "Corporate office needs deep cleaning including floors, desks and restrooms. Equipment provided.",
       "budget": "₹2,500.00",
-      "badges": ["Physical Labor", "Full-time", "Immediate Start"],
+      "badges": [
+        "Physical Labor",
+        "Full-time",
+        "Immediate Start"
+      ],
       "icon": "Shovel",
       "iconBgC": "bg-green-500/10",
       "iconC": "text-green-400"
@@ -64,8 +77,14 @@
       "budget": "₹1,400.00",
       "mapLabel": "THIRUVANANTHAPURAM",
       "details": [
-        { "icon": "Clock", "text": "Urgent" },
-        { "icon": "Truck", "text": "Bike/Scooter" }
+        {
+          "icon": "Clock",
+          "text": "Urgent"
+        },
+        {
+          "icon": "Truck",
+          "text": "Bike/Scooter"
+        }
       ]
     },
     {
@@ -115,7 +134,11 @@
       "status": "15 MINS AGO",
       "description": "Deliver groceries from local supermarket to residential area. Multiple stops required.",
       "budget": "₹600.00",
-      "badges": ["Part-time", "Flexible Hours", "Vehicle Required"],
+      "badges": [
+        "Part-time",
+        "Flexible Hours",
+        "Vehicle Required"
+      ],
       "icon": "Package",
       "iconBgC": "bg-green-500/10",
       "iconC": "text-green-400"
@@ -144,8 +167,14 @@
       "budget": "₹950.00",
       "mapLabel": "COIMBATORE",
       "details": [
-        { "icon": "Clock", "text": "Same Day" },
-        { "icon": "Truck", "text": "Tools Provided" }
+        {
+          "icon": "Clock",
+          "text": "Same Day"
+        },
+        {
+          "icon": "Truck",
+          "text": "Tools Provided"
+        }
       ]
     },
     {
@@ -228,7 +257,10 @@
       "title": "UI/UX Designer for Enterprise Portal",
       "status": "30 MINS AGO",
       "budget": "₹12,500.00",
-      "user": { "name": "Sahana P.", "rating": 5 },
+      "user": {
+        "name": "Sahana P.",
+        "rating": 5
+      },
       "description": "Craft interface designs for a secure enterprise hiring portal with modern usability standards.",
       "company": "BrightUI",
       "icon": "Monitor",

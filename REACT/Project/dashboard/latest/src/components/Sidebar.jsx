@@ -1,4 +1,4 @@
-import { LayoutDashboard, Compass, Briefcase, MessageSquare, BarChart2, Plus, Settings, HelpCircle, User, FileText, CheckSquare } from 'lucide-react';
+import { LayoutDashboard, Compass, Briefcase, MessageSquare, BarChart2, Plus, Settings, HelpCircle, User, FileText, CheckSquare, Video } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const Sidebar = () => {
@@ -104,6 +104,15 @@ const Sidebar = () => {
             {currentView === 'application-tracker' && <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-white rounded-r-md"></div>}
             <CheckSquare size={20} />
             Applications
+          </button>
+
+          <button 
+            onClick={() => navigate('/interviews')}
+            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors font-medium text-left ${currentView === 'interviews' ? 'bg-white/10 text-white relative' : 'hover:bg-white/5'}`}
+          >
+            {currentView === 'interviews' && <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-white rounded-r-md"></div>}
+            <Video size={20} />
+            Interviews
           </button>
           
           <button 

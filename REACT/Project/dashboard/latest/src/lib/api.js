@@ -35,7 +35,7 @@ export const createJob = (payload) => request('/jobs', {
   body: JSON.stringify(payload),
 });
 
-export const getApplications = (email) => request(`/applications?email=${encodeURIComponent(email)}`);
+export const getApplications = (email) => request(email ? `/applications?email=${encodeURIComponent(email)}` : '/applications');
 
 export const createApplication = (payload) => request('/applications', {
   method: 'POST',
@@ -45,3 +45,9 @@ export const createApplication = (payload) => request('/applications', {
 export const deleteApplication = (id) => request(`/applications/${id}`, {
   method: 'DELETE',
 });
+
+export const updateApplication = (id, payload) => request(`/applications/${id}`, {
+  method: 'PUT',
+  body: JSON.stringify(payload),
+});
+

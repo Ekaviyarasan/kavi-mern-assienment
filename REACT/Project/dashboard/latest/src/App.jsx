@@ -15,6 +15,7 @@ import MyGigs from './components/MyGigs';
 import ResumeUpdate from './components/ResumeUpdate';
 import ApplicationTracker from './components/ApplicationTracker';
 import PostJob from './components/PostJob';
+import InterviewHub from './components/InterviewHub';
 import './App.css';
 
 function ApplicationLayout({ children }) {
@@ -48,6 +49,7 @@ function App() {
       <Route path="/application-tracker" element={<ApplicationLayout><ApplicationTracker /></ApplicationLayout>} />
       <Route path="/resume" element={<ApplicationLayout><ResumeUpdate /></ApplicationLayout>} />
       <Route path="/post-job" element={<ApplicationLayout><PostJob /></ApplicationLayout>} />
+      <Route path="/interviews" element={<ApplicationLayout><InterviewHub /></ApplicationLayout>} />
       <Route path="/candidates" element={<ApplicationLayout><Candidates /></ApplicationLayout>} />
       <Route path="/my-gigs" element={<ApplicationLayout><MyGigs /></ApplicationLayout>} />
       <Route path="/search-history" element={<ApplicationLayout><SearchHistory /></ApplicationLayout>} />

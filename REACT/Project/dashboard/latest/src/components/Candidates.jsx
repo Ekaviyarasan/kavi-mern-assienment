@@ -96,6 +96,26 @@ const Candidates = () => {
                       <p className="font-bold text-white">{job.location || job.distance || job.estimatedTime || 'Remote'}</p>
                     </div>
                   </div>
+                  {job.applicationStatus === 'Interview' && job.interviewMeetLink && (
+                    <div className="mb-6 p-4 rounded-3xl bg-indigo-500/10 border border-indigo-500/30">
+                      <div className="flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-wider mb-3">
+                        <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse"></span>
+                        Face-to-Face Interview Scheduled
+                      </div>
+                      <p className="text-sm text-slate-300 mb-1.5">
+                        Time: <strong className="text-white">{new Date(job.interviewDateTime).toLocaleString()}</strong>
+                      </p>
+                      <p className="text-sm text-slate-300 mb-4">
+                        Interviewer: <strong className="text-white">{job.interviewerName}</strong>
+                      </p>
+                      <button
+                        onClick={() => navigate('/interviews')}
+                        className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#818CF8] hover:bg-[#6366F1] text-white text-xs font-bold rounded-xl transition shadow-[0_4px_15px_rgba(129,140,248,0.25)] cursor-pointer"
+                      >
+                        Join Google Meet (Voice & Face Open)
+                      </button>
+                    </div>
+                  )}
 
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                     <div>
