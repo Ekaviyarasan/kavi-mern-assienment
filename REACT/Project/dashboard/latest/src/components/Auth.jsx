@@ -41,7 +41,7 @@ const Auth = () => {
         : await registerUser(payload);
 
       localStorage.setItem('jobhub_user', JSON.stringify(response.user));
-      localStorage.setItem('jobhub_token', 'authenticated');
+      localStorage.setItem('jobhub_token', response.token);
       navigate('/dashboard');
     } catch (err) {
       setError(err.message || 'Unable to complete request.');

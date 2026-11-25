@@ -1,15 +1,20 @@
 import mongoose from 'mongoose';
-import { initLocalJsonDb } from './localDb.js';
 
 const connectDB = async () => {
+  const mongoUri = process.env.MONGO_URI;
+
+  if (!mongoUri) {
+    throw new Error('MONGO_URI is not configured. Add it to backend/.env.');
+  }
+
   try {
-    const conn = await mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/jobzenix', {
-      serverSelectionTimeoutMS: 5000 // Timeout faster so fallback triggers quickly
+    const conn = await mongoose.connect(mongoUri, {
+      serverSelectionTimeoutMS: 10000,
     });
-    console.log(`MongoDB Connected: ${conn.connection.host}`);
+    console.log(`MongoDB connected: ${conn.connection.host}`);
   } catch (error) {
     console.error(`MongoDB connection failed: ${error.message}`);
-    initLocalJsonDb();
+    throw error;
   }
 };
 

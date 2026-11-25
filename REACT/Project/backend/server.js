@@ -19,53 +19,22 @@ const __dirname = path.dirname(__filename);
 const dbPath = path.join(__dirname, 'server-data', 'db.json');
 
 const app = express();
-app.use(cors());
+
+const allowedOrigins = [
+  process.env.CLIENT_URL,
+  'http://localhost:5173',
+  'http://127.0.0.1:5173',
+].filter(Boolean);
+
+app.use(cors({
+  origin(origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) return callback(null, true);
+    return callback(new Error('Not allowed by CORS'));
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 app.use(express.json());
-
-// Connect to MongoDB
-connectDB().then(() => {
-  seedDatabase();
-});
-
-// Seeding logic to migrate initial JSON data to MongoDB
-const seedDatabase = async () => {
-  if (global.isLocalFallback) {
-    console.log('Local JSON DB fallback is active, skipping seed migration.');
-    return;
-  }
-  try {
-    if (fs.existsSync(dbPath)) {
-      console.log('Found local db.json, checking for data migration...');
-      const localDb = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
-
-      // Seed Users if none exist
-      const userCount = await User.countDocuments();
-      if (userCount === 0 && localDb.users && localDb.users.length > 0) {
-        console.log(`Seeding ${localDb.users.length} users...`);
-        await User.insertMany(localDb.users);
-        console.log('Users seeded successfully!');
-      }
-
-      // Seed Jobs if none exist
-      const jobCount = await Job.countDocuments();
-      if (jobCount === 0 && localDb.jobs && localDb.jobs.length > 0) {
-        console.log(`Seeding ${localDb.jobs.length} jobs...`);
-        await Job.insertMany(localDb.jobs);
-        console.log('Jobs seeded successfully!');
-      }
-
-      // Seed Applications if none exist
-      const applicationCount = await Application.countDocuments();
-      if (applicationCount === 0 && localDb.applications && localDb.applications.length > 0) {
-        console.log(`Seeding ${localDb.applications.length} applications...`);
-        await Application.insertMany(localDb.applications);
-        console.log('Applications seeded successfully!');
-      }
-    }
-  } catch (error) {
-    console.error('Error during database seeding:', error.message);
-  }
-};
 
 // Mount API Routes
 app.use('/api/auth', authRoutes);
@@ -74,10 +43,58 @@ app.use('/api/applications', applicationRoutes);
 
 // Health check endpoint
 app.get('/api/health', (_req, res) => {
-  res.json({ status: 'ok' });
+  res.status(200).json({ status: 'ok' });
 });
 
-const port = process.env.PORT || 5000;
-app.listen(port, () => {
-  console.log(`Backend server running on http://localhost:${port}`);
+app.use((req, res) => {
+  res.status(404).json({ message: `Route ${req.method} ${req.originalUrl} not found.` });
 });
+
+app.use((error, _req, res, _next) => {
+  console.error(error.message);
+  res.status(error.status || 500).json({ message: error.message || 'Internal server error.' });
+});
+
+// Seeding logic to migrate initial JSON data to MongoDB
+const seedDatabase = async () => {
+  if (!fs.existsSync(dbPath)) return;
+
+  try {
+    const localDb = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
+
+    // Seed Users if none exist
+    if (await User.countDocuments() === 0 && localDb.users?.length) {
+      await User.insertMany(localDb.users, { ordered: false });
+      console.log(`Seeded ${localDb.users.length} users.`);
+    }
+    // Seed Jobs if none exist
+    if (await Job.countDocuments() === 0 && localDb.jobs?.length) {
+      await Job.insertMany(localDb.jobs);
+      console.log(`Seeded ${localDb.jobs.length} jobs.`);
+    }
+    // Seed Applications if none exist
+    if (await Application.countDocuments() === 0 && localDb.applications?.length) {
+      await Application.insertMany(localDb.applications);
+      console.log(`Seeded ${localDb.applications.length} applications.`);
+    }
+  } catch (error) {
+    console.error(`Database seeding warning: ${error.message}`);
+  }
+};
+
+const startServer = async () => {
+  try {
+    await connectDB();
+    await seedDatabase();
+
+    const port = Number(process.env.PORT) || 5000;
+    app.listen(port, () => {
+      console.log(`Backend server running at http://localhost:${port}`);
+    });
+  } catch (error) {
+    console.error('Unable to start server:', error.message);
+    process.exit(1);
+  }
+};
+
+startServer();
